@@ -249,22 +249,79 @@ import ReactDOM from 'react-dom';
 // }
 
 //Find Dom Node
+// class App extends React.Component {
+//     constructor() {
+//         super();
+//         this.findDomNodeHander = this.findDomNodeHander.bind(this);
+//     };
+//     findDomNodeHander() {
+//         var myDiv = document.getElementById('myDiv');
+//         ReactDOM.findDOMNode(myDiv).style.color = 'green';
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <button onClick={this.findDomNodeHander}>Find Dome Node</button>
+//                 <div id="myDiv">Node</div>
+//             </div>
+//         );
+//     }
+// }
+
+//Forms Basic
+// class App extends React.Component {
+//     constructor(props) {
+//         super(props);
+
+//         this.state = {
+//             data: 'Initial data....'
+//         }
+//         this.updateState = this.updateState.bind(this);
+//     };
+//     updateState(e) {
+//         this.setState({ data: e.target.value });
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <input type="text" value={this.state.data} onChange={this.updateState} />
+//                 <h4>{this.state.data}</h4>
+//             </div>
+//         );
+//     }
+// }
+
+//Form Complex
 class App extends React.Component {
-    constructor() {
-        super();
-        this.findDomNodeHander = this.findDomNodeHander.bind(this);
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            data: 'Initial data into...'
+        }
+        this.updateState = this.updateState.bind(this);
     };
-    findDomNodeHander() {
-        var myDiv = document.getElementById('myDiv');
-        ReactDOM.findDOMNode(myDiv).style.color = 'green';
+    updateState(e) {
+        this.setState({ data: e.target.value });
     }
     render() {
         return (
             <div>
-                <button onClick={this.findDomNodeHander}>Find Dome Node</button>
-                <div id="myDiv">Node</div>
+                <Content myDataProp={this.state.data}
+                    updateStateProp={this.updateState}></Content>
             </div>
         );
     }
 }
+class Content extends React.Component {
+    render() {
+        return (
+            <div>
+                <input type="text" value={this.props.myDataProp} onChange={this.props.myDataProp} />
+                <h3>{this.props.myDataProp}</h3>
+            </div>
+        );
+    }
+}
+
 export default App;
