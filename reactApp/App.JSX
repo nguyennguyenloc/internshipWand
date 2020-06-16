@@ -1,5 +1,6 @@
 import React from 'react';
 import react from 'react';
+//import ReactDOM when u use Find Dom Node
 import ReactDOM from 'react-dom';
 
 // class App extends React.Component {
