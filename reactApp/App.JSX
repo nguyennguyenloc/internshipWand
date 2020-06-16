@@ -297,7 +297,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            data: 'Initial data into...'
+            data: 'Initial data into.........'
         }
         this.updateState = this.updateState.bind(this);
     };
@@ -317,7 +317,8 @@ class Content extends React.Component {
     render() {
         return (
             <div>
-                <input type="text" value={this.props.myDataProp} onChange={this.props.myDataProp} />
+                <input type="text" value={this.props.myDataProp}
+                    onChange={this.props.updateStateProp} />
                 <h3>{this.props.myDataProp}</h3>
             </div>
         );
