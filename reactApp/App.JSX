@@ -1,5 +1,6 @@
 import React from 'react';
 import react from 'react';
+import ReactDOM from 'react-dom';
 
 // class App extends React.Component {
 //     render() {
@@ -228,19 +229,39 @@ import react from 'react';
 // }
 
 //Force Update
+// class App extends React.Component {
+//     constructor() {
+//         super();
+//         this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
+//     };
+//     forceUpdateHandler() {
+//         this.forceUpdate();
+//     };
+//     render() {
+//         return (
+//             <div>
+//                 <button onClick={this.forceUpdateHandler}></button>
+//                 <h4>Random number:{Math.random()}</h4>
+//             </div>
+//         );
+//     }
+// }
+
+//Find Dom Node
 class App extends React.Component {
     constructor() {
         super();
-        this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
+        this.findDomNodeHander = this.findDomNodeHander.bind(this);
     };
-    forceUpdateHandler() {
-        this.forceUpdate();
-    };
+    findDomNodeHander() {
+        var myDiv = document.getElementById('myDiv');
+        ReactDOM.findDOMNode(myDiv).style.color = 'green';
+    }
     render() {
         return (
             <div>
-                <button onClick={this.forceUpdateHandler}></button>
-                <h4>Random number:{Math.random()}</h4>
+                <button onClick={this.findDomNodeHander}>Find Dome Node</button>
+                <div id="myDiv">Node</div>
             </div>
         );
     }
