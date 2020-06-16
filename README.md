@@ -1,3 +1,2 @@
 # internshipWand
-Thực tập tốt nghiệp
-ádaxzcsadasd
+Thực tập tốt nghiệp 2020
