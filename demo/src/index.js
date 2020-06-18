@@ -65,18 +65,31 @@ import './index.css';
 //   );
 // }
 //component
-
+class UserDetail extends React.Component {
+  render() {
+    return (
+      <div className="UserDetail">
+        <h1>Name: {this.props.name}</h1>
+        <h1>Email: {this.props.email}</h1>
+      </div>
+    );
+  }
+}
+class UserDetail1 extends React.Component {
+  render() {
+    return (
+      <div className="UserDetail1">
+        <h1>Information: {this.props.info}</h1>
+      </div>
+    );
+  }
+}
 class UserInfo extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <h1>Name: {this.props.name}</h1>
-          <h1>Email: {this.props.email}</h1>
-        </div>
-        <div>
-          <h1>Information: {this.props.info}</h1>
-        </div>
+        <UserDetail name={this.props.name} email={this.props.email} />
+        <UserDetail1 info={this.props.info} />
       </div>
     );
   }
