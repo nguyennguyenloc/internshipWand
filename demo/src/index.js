@@ -55,14 +55,27 @@ import './index.css';
 // setInterval(updateTime, 1000);
 
 //component + props
-function UserInfo(props) {
-  return (
-    <div>
-      <p>Name: {props.name}</p>
-      <p>Email: {props.email}</p>
-    </div>
-  );
+//props
+// function UserInfo(props) {
+//   return (
+//     <div>
+//       <p>Name: {props.name}</p>
+//       <p>Email: {props.email}</p>
+//     </div>
+//   );
+// }
+//component
+
+class UserInfo extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Name: {this.props.name}</h1>
+        <h1>Email: {this.props.email}</h1>
+      </div>
+    );
+  }
 }
 const element = <UserInfo name="loc" email="nnloc123@gmail.com" />;
-// ReactDOM.render(element, document.getElementById('root'));
-ReactDOM.render(< UserInfo name="loc" email="nnloc123@gmail.com" />, document.getElementById('root'));
+ReactDOM.render(element, document.getElementById('root'));
+// ReactDOM.render(< UserInfo name="loc" email="nnloc123@gmail.com" />, document.getElementById('root'));
