@@ -43,13 +43,26 @@ import './index.css';
 // }
 // setInterval(updaTimer, 1000);
 
-function updateTime() {
-  const element = (
-    <div div >
-      <h1>Timer update example</h1>
-      <h2>Current time is: {new Date().toLocaleTimeString()}</h2>
-    </div >
+// function updateTime() {
+//   const element = (
+//     <div div >
+//       <h1>Timer update example</h1>
+//       <h2>Current time is: {new Date().toLocaleTimeString()}</h2>
+//     </div >
+//   );
+//   ReactDOM.render(element, document.getElementById('root'));
+// }
+// setInterval(updateTime, 1000);
+
+//component + props
+function UserInfo(props) {
+  return (
+    <div>
+      <p>Name: {props.name}</p>
+      <p>Email: {props.email}</p>
+    </div>
   );
-  ReactDOM.render(element, document.getElementById('root'));
 }
-setInterval(updateTime, 1000);
+const element = <UserInfo name="loc" email="nnloc123@gmail.com" />;
+// ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(< UserInfo name="loc" email="nnloc123@gmail.com" />, document.getElementById('root'));
