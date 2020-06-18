@@ -65,35 +65,64 @@ import './index.css';
 //   );
 // }
 //component
-class UserDetail extends React.Component {
-  render() {
-    return (
-      <div className="UserDetail">
-        <h1>Name: {this.props.name}</h1>
-        <h1>Email: {this.props.email}</h1>
-      </div>
+// class UserDetail extends React.Component {
+//   render() {
+//     return (
+//       <div className="UserDetail">
+//         <h1>Name: {this.props.name}</h1>
+//         <h1>Email: {this.props.email}</h1>
+//       </div>
+//     );
+//   }
+// }
+// class UserDetail1 extends React.Component {
+//   render() {
+//     return (
+//       <div className="UserDetail1">
+//         <h1>Information: {this.props.info}</h1>
+//       </div>
+//     );
+//   }
+// }
+// class UserInfo extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <UserDetail name={this.props.name} email={this.props.email} />
+//         <UserDetail1 info={this.props.info} />
+//       </div>
+//     );
+//   }
+// }
+// const element = <UserInfo name="loc" email="nnloc123@gmail.com" info="ahihi" />;
+// ReactDOM.render(element, document.getElementById('root'));
+// ReactDOM.render(< UserInfo name="loc" email="nnloc123@gmail.com" />, document.getElementById('root'));
+
+class Couter extends React.Component {
+  constructor(props) { //khoi tao
+    super(props);
+    this.state = { seconds: 0 };
+  }
+  incrementCounter() {
+    this.setState(
+      (prevState, props) => ({
+        seconds: prevState.seconds + 1
+      })
     );
   }
-}
-class UserDetail1 extends React.Component {
-  render() {
-    return (
-      <div className="UserDetail1">
-        <h1>Information: {this.props.info}</h1>
-      </div>
-    );
+  componentDidMount() {
+    this.timerID = setInterval(() => this.incrementCounter(), 1000);
   }
-}
-class UserInfo extends React.Component {
+  componentWillMount() {
+    clearInterval(this.timerID);
+  }
   render() {
     return (
       <div>
-        <UserDetail name={this.props.name} email={this.props.email} />
-        <UserDetail1 info={this.props.info} />
+        <h1>This is a counting machine!</h1>
+        <h2>Second: {this.state.seconds} s</h2>
       </div>
     );
   }
 }
-const element = <UserInfo name="loc" email="nnloc123@gmail.com" info="ahihi" />;
-ReactDOM.render(element, document.getElementById('root'));
-// ReactDOM.render(< UserInfo name="loc" email="nnloc123@gmail.com" />, document.getElementById('root'));
+ReactDOM.render(<Couter />, document.getElementById('root'));
