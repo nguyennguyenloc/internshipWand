@@ -17,11 +17,11 @@ const element = (
   </div>
 );
 var numbers = [1, 2, 3, 4];
-var doubleNUmbers = numbers.map(function (eachNumber) {
-  return eachNumber * 2 + ", ";
-});
-
-ReactDOM.render(<h1>doubleNumbers: {doubleNUmbers}</h1>, document.getElementById('root'));
+// var doubleNumbers = numbers.map(function (eachNumber) {
+//   return eachNumber * 2 + ", ";
+// });
+var doubleNumbers = numbers.map((eachNumber) => eachNumber * 3 + ", ");
+ReactDOM.render(<h1>doubleNumbers: {doubleNumbers}</h1>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
