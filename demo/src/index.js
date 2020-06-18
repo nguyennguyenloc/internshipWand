@@ -98,31 +98,60 @@ import './index.css';
 // ReactDOM.render(element, document.getElementById('root'));
 // ReactDOM.render(< UserInfo name="loc" email="nnloc123@gmail.com" />, document.getElementById('root'));
 
-class Couter extends React.Component {
-  constructor(props) { //khoi tao
+// class Couter extends React.Component {
+//   constructor(props) { //khoi tao
+//     super(props);
+//     this.state = { seconds: 0 };
+//   }
+//   incrementCounter() {
+//     this.setState(
+//       (prevState, props) => ({
+//         seconds: prevState.seconds + 1
+//       })
+//     );
+//   }
+//   componentDidMount() {
+//     this.timerID = setInterval(() => this.incrementCounter(), 1000);
+//   }
+//   componentWillMount() {
+//     clearInterval(this.timerID);
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <h1>This is a counting machine!</h1>
+//         <h2>Second: {this.state.seconds} s</h2>
+//       </div>
+//     );
+//   }
+// }
+// ReactDOM.render(<Couter />, document.getElementById('root'));
+
+class ToggleButton extends React.Component {
+  constructor(props) {
     super(props);
-    this.state = { seconds: 0 };
+    this.state = { isOn: true };
+    this.buttonClick = this.buttonClick.bind(this);
   }
-  incrementCounter() {
-    this.setState(
-      (prevState, props) => ({
-        seconds: prevState.seconds + 1
-      })
-    );
+  buttonClick() {
+    this.setState(prevState => ({
+      isOn: !prevState.isOn
+    }
+    ));
   }
-  componentDidMount() {
-    this.timerID = setInterval(() => this.incrementCounter(), 1000);
-  }
-  componentWillMount() {
-    clearInterval(this.timerID);
-  }
+  // buttonClick = () => {
+  //   this.setState(prevState => ({
+  //     isOn: !prevState.isOn
+  //   })
+  //   );
+  // }
   render() {
     return (
-      <div>
-        <h1>This is a counting machine!</h1>
-        <h2>Second: {this.state.seconds} s</h2>
-      </div>
+      <button class="toggleButton" onClick={this.buttonClick}>
+        This is a toggle button:
+        {this.state.isOn ? " turning On" : " turning Off"}
+      </button>
     );
   }
 }
-ReactDOM.render(<Couter />, document.getElementById('root'));
+ReactDOM.render(<ToggleButton />, document.getElementById('root'));

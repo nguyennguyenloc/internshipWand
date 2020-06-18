@@ -25,3 +25,10 @@ code {
   color:yellow;
   background-color: blue;
 }
+.toggleButton{
+  margin: 20px;
+  padding: 10px;
+  background-color: cornflowerblue;
+  color: azure;
+  width: 200px;
+}
