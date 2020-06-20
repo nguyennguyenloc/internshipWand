@@ -1,0 +1,13 @@
+C:\Users\MT\Documents\internshipWand\TestDebug\bin\Debug\netcoreapp3.1\TestDebug.exe
+C:\Users\MT\Documents\internshipWand\TestDebug\bin\Debug\netcoreapp3.1\TestDebug.deps.json
+C:\Users\MT\Documents\internshipWand\TestDebug\bin\Debug\netcoreapp3.1\TestDebug.runtimeconfig.json
+C:\Users\MT\Documents\internshipWand\TestDebug\bin\Debug\netcoreapp3.1\TestDebug.runtimeconfig.dev.json
+C:\Users\MT\Documents\internshipWand\TestDebug\bin\Debug\netcoreapp3.1\TestDebug.dll
+C:\Users\MT\Documents\internshipWand\TestDebug\bin\Debug\netcoreapp3.1\TestDebug.pdb
+C:\Users\MT\Documents\internshipWand\TestDebug\obj\Debug\netcoreapp3.1\TestDebug.csprojAssemblyReference.cache
+C:\Users\MT\Documents\internshipWand\TestDebug\obj\Debug\netcoreapp3.1\TestDebug.AssemblyInfoInputs.cache
+C:\Users\MT\Documents\internshipWand\TestDebug\obj\Debug\netcoreapp3.1\TestDebug.AssemblyInfo.cs
+C:\Users\MT\Documents\internshipWand\TestDebug\obj\Debug\netcoreapp3.1\TestDebug.csproj.CoreCompileInputs.cache
+C:\Users\MT\Documents\internshipWand\TestDebug\obj\Debug\netcoreapp3.1\TestDebug.dll
+C:\Users\MT\Documents\internshipWand\TestDebug\obj\Debug\netcoreapp3.1\TestDebug.pdb
+C:\Users\MT\Documents\internshipWand\TestDebug\obj\Debug\netcoreapp3.1\TestDebug.genruntimeconfig.cache
