@@ -44,6 +44,10 @@ class TodoList extends React.Component {
     // console.log(title);
     this.setState({ title: title });
   }
+  handleClearCompleted(event) {
+    var newTodos = this.state.todos.filter((todo) => { return !todo.done });
+    this.setState({ todos: newTodos });
+  }
   render() {
     return (
       <div>
@@ -56,9 +60,16 @@ class TodoList extends React.Component {
         <p>Number of total tasks:
            {this.state.todos.length}
         </p>
-        <p>Number of total tasks done:
+        <p>
+          Number of total tasks Completed:
         {/* {this.state.items.filter((title) => { title.done }).length} */}
           {this.state.todos.filter((todo) => { return todo.done }).length}
+        </p>
+        <p> Number of total tasks Pending:
+          {this.state.todos.filter((todo) => { return !todo.done }).length}
+        </p>
+        <p>
+          <button onClick={this.handleClearCompleted.bind(this)}>Clear Completed</button>
         </p>
         <DisplayList
           handleDone={this.handleDone.bind(this)}
