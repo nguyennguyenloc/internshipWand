@@ -16,6 +16,16 @@ class TodoList extends React.Component {
       ]
     };
   }
+  handleDone(titleToBeMarkedAsDone) {
+    console.log(titleToBeMarkedAsDone + "Wants ti be marks as done");
+    var _todo = this.state.todos;
+    var todo = _todo.filter((todo) => {
+      return todo.title === titleToBeMarkedAsDone;
+    })[0];
+
+    todo.done = !todo.done;
+    this.setState({ todos: _todo });
+  }
   handleDelete(titleToBeDelete) {
     var newTodos = this.state.todos.filter((todo) => {
       return todo.title !== titleToBeDelete
@@ -51,6 +61,7 @@ class TodoList extends React.Component {
           {this.state.todos.filter((todo) => { return todo.done }).length}
         </p>
         <DisplayList
+          handleDone={this.handleDone.bind(this)}
           handleDelete={this.handleDelete.bind(this)}
           todos={this.state.todos} />
       </div>

@@ -27,8 +27,9 @@ export default class DisplayList extends React.Component {
                         // </li>
                         return <DisplayItem
                             key={todo.title}
+                            handleDone={this.props.handleDone}
                             handleDelete={this.props.handleDelete.bind(null, todo.title)}
-                            title={todo.title} />
+                            todo={todo} />
                     })}
                 </ul>
                 {/* <h1>alololololo</h1> */}

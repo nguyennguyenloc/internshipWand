@@ -1,26 +1,27 @@
 import React from 'react';
 
 export default class DisplayItem extends React.Component {
-    constructor() {
-        super();
-        this.state = { done: false };
-    }
+    // constructor() {
+    //     super();
+    //     this.state = { done: false };
+    // }
     // handleOnChange(event) {
     //     var _done = !this.state.done;
     //     this.setState({ done: _done });
     // }
-    handleDone(event) {
-        var _done = !this.state.done;
-        this.setState({ done: _done });
-    }
+    // handleDone(event) {
+    //     var _done = !this.state.done;
+    //     this.setState({ done: _done });
+    // }
     render() {
-        var title = this.props.title;
+        var todo = this.props.todo;
+        var title = todo.title;
 
         return <li>
             <input
-                checked={this.state.done}
+                checked={todo.done}
                 // onChange={this.handleOnChange.bind(this)}
-                onChange={this.handleDone.bind(this)}
+                onChange={this.props.handleDone.bind(null, title)}
                 type="checkbox"
                 style={{ fontSize: "x-large" }}
             />
