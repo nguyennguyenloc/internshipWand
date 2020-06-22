@@ -9,19 +9,23 @@ class TodoList extends React.Component {
     super(props);
     this.state = {
       title: '',
-      todos: ["mot", "hai", "ba"]
+      todos: [
+        { title: "mot", done: false },
+        { title: "hai", done: false },
+        { title: "ba", done: false }
+      ]
     };
   }
   handleDelete(titleToBeDelete) {
-    var newTodos = this.state.todos.filter((_title) => {
-      return _title !== titleToBeDelete
+    var newTodos = this.state.todos.filter((todo) => {
+      return todo.title !== titleToBeDelete
     });
     this.setState({ todos: newTodos });
   }
   handleSubmit(event) {
     event.preventDefault();
     var title = this.state.title;
-    var newTodos = this.state.todos.concat(title);
+    var newTodos = this.state.todos.concat({ title: title, done: false });
     // console.log("form was submit", title);
     this.setState({ title: '', todos: newTodos });
   }
@@ -44,7 +48,7 @@ class TodoList extends React.Component {
         </p>
         <p>Number of total tasks done:
         {/* {this.state.items.filter((title) => { title.done }).length} */}
-          {this.state.todos.filter((title) => { return title.done }).length}
+          {this.state.todos.filter((todo) => { return todo.done }).length}
         </p>
         <DisplayList
           handleDelete={this.handleDelete.bind(this)}

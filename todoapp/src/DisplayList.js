@@ -13,7 +13,7 @@ export default class DisplayList extends React.Component {
         return (
             <div>
                 <ul>
-                    {this.props.todos.map((title, i) => {
+                    {this.props.todos.map((todo, i) => {
                         // return <li key={item}>
                         //     <input
                         //         checked={this.state.done}
@@ -26,9 +26,9 @@ export default class DisplayList extends React.Component {
                         //     </button>
                         // </li>
                         return <DisplayItem
-                            key={title}
-                            handleDelete={this.props.handleDelete.bind(null, title)}
-                            item={title} />
+                            key={todo.title}
+                            handleDelete={this.props.handleDelete.bind(null, todo.title)}
+                            title={todo.title} />
                     })}
                 </ul>
                 {/* <h1>alololololo</h1> */}
