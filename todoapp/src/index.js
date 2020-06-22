@@ -8,46 +8,47 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: '',
-      items: ["mot", "hai", "ba"]
+      title: '',
+      todos: ["mot", "hai", "ba"]
     };
   }
-  handleDelete(itemToBeDelete) {
-    var newItems = this.state.items.filter((_item) => {
-      return _item !== itemToBeDelete
+  handleDelete(titleToBeDelete) {
+    var newTodos = this.state.todos.filter((_title) => {
+      return _title !== titleToBeDelete
     });
-    this.setState({ items: newItems });
+    this.setState({ todos: newTodos });
   }
   handleSubmit(event) {
     event.preventDefault();
-    var text = this.state.text;
-    var newItems = this.state.items.concat(text);
-    // console.log("form was submit", text);
-    this.setState({ text: '', items: newItems });
+    var title = this.state.title;
+    var newTodos = this.state.todos.concat(title);
+    // console.log("form was submit", title);
+    this.setState({ title: '', todos: newTodos });
   }
   handleChange(event) {
-    var text = event.target.value;
-    // console.log(text);
-    this.setState({ text: text });
+    var title = event.target.value;
+    // console.log(title);
+    this.setState({ title: title });
   }
   render() {
     return (
       <div>
         <h1 className="titleTodo">To do list</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <input onChange={this.handleChange.bind(this)} value={this.state.text} />
+          <input onChange={this.handleChange.bind(this)} value={this.state.title} />
           <button className="but">AddList</button>
         </form>
         {/* <p>{this.state.items.toString()}</p> */}
         <p>Number of total tasks:
-           {this.state.items.length}
+           {this.state.todos.length}
         </p>
         <p>Number of total tasks done:
-          {this.state.items.filter((item) => { return item.done }).length}
+        {/* {this.state.items.filter((title) => { title.done }).length} */}
+          {this.state.todos.filter((title) => { return title.done }).length}
         </p>
         <DisplayList
           handleDelete={this.handleDelete.bind(this)}
-          items={this.state.items} />
+          todos={this.state.todos} />
       </div>
     );
   }

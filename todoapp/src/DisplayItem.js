@@ -14,7 +14,7 @@ export default class DisplayItem extends React.Component {
         this.setState({ done: _done });
     }
     render() {
-        var item = this.props.item;
+        var title = this.props.title;
 
         return <li>
             <input
@@ -24,8 +24,8 @@ export default class DisplayItem extends React.Component {
                 type="checkbox"
                 style={{ fontSize: "x-large" }}
             />
-            {item}
-            <button className="but1" onClick={this.props.handleDelete.bind(null, item)} >
+            {title}
+            <button className="but1" onClick={this.props.handleDelete.bind(null, title)} >
                 Delete
             </button>
         </li>
