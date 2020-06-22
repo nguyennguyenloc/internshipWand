@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 // import logo from './logo.svg';
 // import './App.css';
@@ -18,30 +18,17 @@ import ReactDOM from 'react-dom';
 // }
 
 // export default App;
-// class DisplayList extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <ul>
-//           {this.props.items.map((item, i) => {
-//             return <li key={item}>{item}</li>
-//           })}
-//         </ul>
-//       </div>
-//     )
-//   };
-// }
-// ReactDOM.render(<DisplayList />, document.getElementById('root'));
+
 
 const App = props => (
   <div>
-    <div>
+    {/* <div>
       <ul>
         {this.props.items.map((item, i) => {
           return <li key={i}>{item}</li>
         })}
       </ul>
-    </div>
+    </div> */}
   </div >
 );
 

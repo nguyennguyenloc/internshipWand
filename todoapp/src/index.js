@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
+import DisplayList from './DisplayList';
 
 class TodoList extends React.Component {
   constructor(props) {
@@ -31,7 +32,8 @@ class TodoList extends React.Component {
           <input onChange={this.handleChange.bind(this)} value={this.state.text} />
           <button>Submit</button>
         </form>
-        <p>{this.state.items.toString()}</p>
+        {/* <p>{this.state.items.toString()}</p> */}
+        <DisplayList items={this.state.items} />
       </div>
     );
   }
