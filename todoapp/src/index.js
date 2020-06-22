@@ -12,6 +12,12 @@ class TodoList extends React.Component {
       items: []
     };
   }
+  handleDelete(itemToBeDelete) {
+    var newItems = this.state.items.filter((_item) => {
+      return _item != itemToBeDelete
+    });
+    this.setState({ items: newItems });
+  }
   handleSubmit(event) {
     event.preventDefault();
     var text = this.state.text;
@@ -27,13 +33,15 @@ class TodoList extends React.Component {
   render() {
     return (
       <div>
-        <p>To Do List</p>
+        <h1 className="titleTodo">To do list</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input onChange={this.handleChange.bind(this)} value={this.state.text} />
-          <button>Submit</button>
+          <button className="but">AddList</button>
         </form>
         {/* <p>{this.state.items.toString()}</p> */}
-        <DisplayList items={this.state.items} />
+        <DisplayList
+          handleDelete={this.handleDelete.bind(this)}
+          items={this.state.items} />
       </div>
     );
   }

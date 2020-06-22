@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 
 export default class DisplayList extends React.Component {
     render() {
@@ -7,12 +6,16 @@ export default class DisplayList extends React.Component {
             <div>
                 <ul>
                     {this.props.items.map((item, i) => {
-                        return <li key={item}>{item}</li>
+                        return <li key={item}>
+                            {item}
+                            <button className="but1" onClick={this.props.handleDelete.bind(null, item)} >
+                                Delete
+                            </button>
+                        </li>
                     })}
                 </ul>
                 {/* <h1>alololololo</h1> */}
-            </div>
+            </div >
         )
     };
 }
-// ReactDOM.render(<DisplayList />, document.getElementById('root'));
