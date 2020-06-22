@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.titleTodo{
+  color: Red;
+  font-size: 40px;
+}
+.but{
+  color: white;
+  background-color: blue;
+  margin-left: 20px;
+  width: 80px;
+}
+.but1{
+  color: black;
+  background-color: yellow;
+  margin-left: 0px;
+  margin-bottom: 20px;
+  width: 80px;
+}
+.but2{
+  color: black;
+  background-color: red;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  width: 80px;
+}
+#root{
+  background-color: burlywood;
+}

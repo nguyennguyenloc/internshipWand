@@ -34,6 +34,10 @@ code {
   margin-bottom: 20px;
   width: 80px;
 }
+.titleTodo{
+  color: Red;
+  font-size: 40px;
+}
 #root{
   background-color: burlywood;
 }

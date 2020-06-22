@@ -45,7 +45,7 @@ class TodoList extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>To do list</h1>
+        <h1 className="titleTodo">To do list</h1>
         <form onSubmit={this.onSubmit}>
           <input value={this.state.term} onChange={this.onChange} />
           <button className="but">AddList</button>
