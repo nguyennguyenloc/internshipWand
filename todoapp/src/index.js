@@ -39,6 +39,12 @@ class TodoList extends React.Component {
           <button className="but">AddList</button>
         </form>
         {/* <p>{this.state.items.toString()}</p> */}
+        <p>Number of total tasks:
+           {this.state.items.length}
+        </p>
+        <p>Number of total tasks done:
+          {this.state.items.filter((item) => { return item.done }).length}
+        </p>
         <DisplayList
           handleDelete={this.handleDelete.bind(this)}
           items={this.state.items} />
