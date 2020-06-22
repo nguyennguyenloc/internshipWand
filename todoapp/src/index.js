@@ -4,38 +4,42 @@ import './index.css';
 // import App from './App';
 import DisplayList from './DisplayList';
 
+var rand = require('random-key');
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       title: '',
       todos: [
-        { title: "mot", done: false },
-        { title: "hai", done: false },
-        { title: "ba", done: false }
+        { title: "mot", done: false, id: 1 },
+        { title: "hai", done: false, id: 2 },
+        { title: "ba", done: false, id: 3 }
       ]
     };
   }
-  handleDone(titleToBeMarkedAsDone) {
-    console.log(titleToBeMarkedAsDone + "Wants ti be marks as done");
+  handleDone(idToBeMarkedAsDone) {
     var _todo = this.state.todos;
     var todo = _todo.filter((todo) => {
-      return todo.title === titleToBeMarkedAsDone;
+      return todo.id === idToBeMarkedAsDone;
     })[0];
 
     todo.done = !todo.done;
     this.setState({ todos: _todo });
   }
-  handleDelete(titleToBeDelete) {
+  handleDelete(idToBeDelete) {
     var newTodos = this.state.todos.filter((todo) => {
-      return todo.title !== titleToBeDelete
+      return todo.id !== idToBeDelete
     });
     this.setState({ todos: newTodos });
   }
   handleSubmit(event) {
     event.preventDefault();
     var title = this.state.title;
-    var newTodos = this.state.todos.concat({ title: title, done: false });
+    var newTodos = this.state.todos.concat({
+      title: title,
+      id: rand.generate(),
+      done: false
+    });
     // console.log("form was submit", title);
     this.setState({ title: '', todos: newTodos });
   }
