@@ -7,18 +7,20 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ''
+      text: '',
+      items: []
     };
   }
   handleSubmit(event) {
     event.preventDefault();
     var text = this.state.text;
-    console.log("form was submit", text);
-    this.setState({ text: '' });
+    var newItems = this.state.items.concat(text);
+    // console.log("form was submit", text);
+    this.setState({ text: '', items: newItems });
   }
   handleChange(event) {
     var text = event.target.value;
-    console.log(text);
+    // console.log(text);
     this.setState({ text: text });
   }
   render() {
@@ -29,6 +31,7 @@ class TodoList extends React.Component {
           <input onChange={this.handleChange.bind(this)} value={this.state.text} />
           <button>Submit</button>
         </form>
+        <p>{this.state.items.toString()}</p>
       </div>
     );
   }
