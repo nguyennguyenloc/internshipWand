@@ -9,12 +9,12 @@ class TodoList extends React.Component {
     super(props);
     this.state = {
       text: '',
-      items: []
+      items: ["mot", "hai", "ba"]
     };
   }
   handleDelete(itemToBeDelete) {
     var newItems = this.state.items.filter((_item) => {
-      return _item != itemToBeDelete
+      return _item !== itemToBeDelete
     });
     this.setState({ items: newItems });
   }
