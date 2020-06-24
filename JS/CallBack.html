@@ -23,6 +23,27 @@
         User('Loc', '23', Hi);
         User('Linh', '18', Hello);
         User('Loc', '23', Hello);
+
+        function con_tho_an_co(callback007) {
+            setTimeout(function () {
+                console.log('Con thỏ ăn cỏ, uống nước');
+                callback007();
+            }, 3000);
+        }
+        function home() {
+            console.log("đi về nhà ngủ");
+
+        }
+        con_tho_an_co();
+        home();
+        var callback = function () {
+            home();
+        }
+        con_tho_an_co(callback);
+        // con_tho_an_co(function () {
+        //     home();
+        // })
+
     </script>
 </body>
 
