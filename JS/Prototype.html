@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>HIHIHIHIHI</h1>
+    <h1>Haaa</h1>
     <script>
         function Person() {
             this.FirstName = function () {
@@ -31,9 +31,20 @@
         for (var i in Student) {
             console.log(i);
         }
-        // var teacher = Object.create(null);
-        var teacher = new Person();
-        teacher.Singasonga();
+
+        function Animal() {
+            this.NameAnimal = function () {
+                console.log("Name animal");
+            }
+        }
+        var dog = new Animal();
+        dog.NameAnimal();
+        dog.Singasong();
+        Animal.prototype.Color = function () {
+            console.log("is color Of red");
+        };
+        dog.Color();
+
     </script>
 </body>
 
