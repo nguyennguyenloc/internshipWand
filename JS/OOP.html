@@ -11,6 +11,26 @@
     <script>
         //casio: function
         //attribute: attribute
+
+        //CallBack
+        api.getUser('pikalong', function (err, user) {
+            if (err) throw err
+            api.getPostOfUser(user, function (err, posts) {
+                if (err) throw err
+                api.getCommentsOfPosts(post, function (err, comments) {
+
+                })
+            })
+        })
+
+        //Promise
+        api
+            .getUser('pikalong')
+            .then(user => api.getPostOfUser(user))
+            .then(user => api.getCommentsOfPosts(user))
+            .catch(err => {
+                throw err
+            })
     </script>
 </body>
 
