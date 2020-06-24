@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Hi() {
+            console.log("Welcome!");
+        }
+        function Hello() {
+            console.log("GoodBye");
+        }
+        function User(name, age, callback) {
+            this.name = name;
+            this.age = age;
+            callback();
+        }
+        User('Loc', '23', Hi);
+        User('Linh', '18', Hello);
+        User('Loc', '23', Hello);
+    </script>
+</body>
+
+</html>
