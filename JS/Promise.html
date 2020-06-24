@@ -9,7 +9,21 @@
 
 <body>
     <h1>Promise</h1>
-    <script></script>
+    <script>
+        function findMoney()
+        .then(function (money) {
+            return findCard(money)
+                .then(function (card) {
+                    return findBooks(money, card)
+                        .then(function (books) {
+                            return readEpicBooks(books.filter(function (book) {
+                                return !!(book.categoryName === '18+');
+                            }));
+                        });
+                });
+        })
+            .catch(console.error.bind(console));
+    </script>
 </body>
 
 </html>
