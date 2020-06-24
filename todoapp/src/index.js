@@ -6,8 +6,10 @@ import DisplayList from './DisplayList';
 
 var rand = require('random-key');
 class TodoList extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
+  constructor() {
+    super();
     this.state = {
       title: '',
       todos: [

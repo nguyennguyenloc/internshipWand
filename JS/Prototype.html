@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>HIHIHIHIHI</h1>
+    <script>
+        function Person() {
+            this.FirstName = function () {
+                console.log("Your First Name");
+            }
+        }
+        console.log(Person);
+        console.log(Person.prototype);
+        console.log(Person.prototype.constructor);
+        var Student = new Person();
+        Student.FirstName();
+        Person.prototype.LastName = function () {
+            console.log("This is Last Name");
+        }
+        Student.LastName();
+        Object.prototype.Singasong = function () {
+            console.log("I sing, I happy");
+        }
+        Student.Singasong();
+        for (var i in Student) {
+            console.log(i);
+        }
+        // var teacher = Object.create(null);
+        var teacher = new Person();
+        teacher.Singasonga();
+    </script>
+</body>
+
+</html>
