@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function run(n) {
+            var result = 0;
+            do {
+                if (n % 2 == 0) {
+                    n = n / 2;
+                    result += 1;
+                    // if (n % 2 == 0) {
+                    //     n = n / 2;
+                    //     result += 1;
+                    // }
+                }
+            } while (n % 2 == 0)
+
+            console.log(result);
+        }
+        run(8);
+        // run(7);
+    </script>
+</body>
+
+</html>
