@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Part 1
+        /*var isMomHappy = false;
+        var willIGetNewPhone = new Promise(
+            function (resolve, reject) {
+                if (isMomHappy) {
+                    var phone = {
+                        brand: 'SamSung',
+                        color: 'black'
+                    };
+                    resolve(phone);
+                } else {
+                    var reason = new Error("not happy");
+                    reject(reason);
+                }
+            }
+        );*/
+
+        //Part 2
+        var askMom = function () {
+            willIGetNewPhone
+                .then(function (res) {
+                    console.log(res);
+                })
+                .catch(function (error) {
+                    console.log(error.message)
+                });
+        };
+        askMom();
+    </script>
+</body>
+
+</html>
