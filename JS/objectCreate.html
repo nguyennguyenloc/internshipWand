@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function run(name, job) {
+            const person = {
+                name: '',
+                job: '',
+                print: function () {
+                    console.log(`My name is ${this.name} and im a ${this.job}`);
+                }
+            };
+            const me = Object.create(person);
+            me.name = name;
+            me.job = job;
+            me.print();
+        }
+        run('loc', 'student');
+    </script>
+</body>
+
+</html>
