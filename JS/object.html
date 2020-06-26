@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function run(name, year_of_birth) {
+        //     this.name = name;
+        //     this.year_of_birth = year_of_birth;
+        // }
+        // run('loc', 2000);
+        // console.log(run());
+
+        function run(name, year_of_birth) {
+            var d = new Date();
+            var current_year = d.getFullYear();
+
+            var info = {
+                name: name,
+                age: year_of_birth,
+                address: 'Ha Noi'
+            }
+            var age = current_year - info.age;
+            console.log(info);
+            console.log(info.name + " is " + age);
+        }
+        run('Loc', 23);
+    </script>
+</body>
+
+</html>
