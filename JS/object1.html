@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function run() {
+            // var obj1 = { name: "foo", a: 4 };
+            // var obj2 = { foo: "bar", b: 5 };
+
+            var obj1 = { name: 'Loc', age: 23 };
+            var obj2 = { name: 'hoho', address: "Vinh" }
+            var obj3 = { work: 'student', name: 'hihi', age: 24 }
+            console.log(obj1);
+            console.log(obj2);
+            console.log(obj3);
+            var obj = Object.assign({}, obj1, obj2, obj3);
+            console.log(obj);
+            var obj = Object.assign(obj1, obj2);
+            console.log(obj);
+            var obj = Object.assign(obj, obj3);
+            console.log(obj);
+            var obj = Object.assign(obj2, obj3);
+            console.log(obj);
+
+        };
+        run();
+    </script>
+</body>
+
+</html>
