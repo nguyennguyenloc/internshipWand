@@ -8,7 +8,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "file:///C:/Users/MT/Documents/internshipWand/JS/dowhile1.html",
+            "url": "file:///C:/Users/MT/Documents/internshipWand/JS/for...lop...reverse.html",
             "webRoot": "${workspaceFolder}"
         }
     ]

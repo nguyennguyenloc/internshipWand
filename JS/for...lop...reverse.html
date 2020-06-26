@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function reverseString(string) {
+            //C1: for...lop
+            // let reversed = '';
+
+            // for (let i = string.length - 1; i >= 0; i--) {
+            //     console.log(string[i]);
+            //     reversed += string[i];
+            // }
+
+            // return reversed;
+
+            //C2: for...of
+            var sum = '';
+            for (let value of string) {
+                sum = value + sum;
+            }
+            console.log(sum);
+        }
+
+        reverseString('hello'); 
+    </script>
+</body>
+
+</html>
