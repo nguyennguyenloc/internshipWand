@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let iterable = [2, -4, -4, 6, -4];
+
+        // for (const value of iterable) {
+        //     console.log(value);
+        // }
+
+
+        // var sum = 0;
+        // for (const value of iterable) {
+        //     if (value < 0) {
+        //         sum += value > 0;
+        //     }
+        //     else { sum += value; }
+        // }
+        // console.log(sum);
+
+        (function () {
+            for (let argument of arguments) {
+                console.log(argument);
+            }
+        })(1, 2, 3, 4, 5, 6);
+    </script>
+</body>
+
+</html>
