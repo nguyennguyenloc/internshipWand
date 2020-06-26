@@ -8,7 +8,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "file:///C:/Users/MT/Documents/internshipWand/JS/arrayConcat.html",
+            "url": "file:///C:/Users/MT/Documents/internshipWand/JS/arrayEvery.html",
             "webRoot": "${workspaceFolder}"
         }
     ]

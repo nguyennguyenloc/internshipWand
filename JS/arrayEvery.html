@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function isBellow(currentValue) {
+        //     return currentValue < 40;
+        // }
+        // var array1 = [1, 2, 3, 4, 5, 6];
+        // console.log(array1.every(isBellow));
+
+        // function isBig(element) {
+        //     return element >= 10;
+        // }
+        // array1.every(isBig);
+        // console.log(array1.every(isBig));
+        var data = [1, 2, 3, 4, 5];
+        function checkDiv(number) {
+            return number % 2 == 0;
+        }
+        function run() {
+            var a = data.every(checkDiv);
+            if (a == true) {
+                console.log("yes");
+            } console.log("no");
+        }
+    </script>
+</body>
+
+</html>
