@@ -8,7 +8,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "pwa-chrome",
-            "url": "file:///C:/Users/MT/Documents/internshipWand/JS/objectKey.html",
+            "url": "file:///C:/Users/MT/Documents/internshipWand/JS/objectValue.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
