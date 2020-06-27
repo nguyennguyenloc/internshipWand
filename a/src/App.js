@@ -63,4 +63,41 @@ function App() {
   );
 }
 
+// function Dicho() {
+//   return (
+//     <div>
+//       <p>Mua: bot mi</p>
+//       <p>Phu gia: dau</p>
+//     </div>
+//   );
+// }
+
+// function Lambanh() {
+//   return (
+//     <div>
+//       <p>Tron bot: do bot vao bat</p>
+//       <p>Ran: cho bot vao chao ran</p>
+//     </div>
+//   )
+// };
+
+// function Baybien() {
+//   return (
+//     <div>
+//       <p>Trang tri: bay do an vao dia</p>
+//       <p>An: an</p>
+//     </div>
+//   )
+// };
+
+// function App() {
+//   return (
+//     <div>
+//       <h1>Chao mung den bua an</h1>
+//       <Dicho />
+//       <Lambanh />
+//       <Baybien />
+//     </div>
+//   )
+// };
 export default App;

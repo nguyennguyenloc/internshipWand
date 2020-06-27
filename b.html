@@ -24,63 +24,103 @@
     <div id="root"></div>
     <div id="element"></div>
     <script type="text/babel">
-        // function Support1() {
+        // function Dicho() {
         //     return (
         //         <div>
-        //             <p>Name: loc</p>
-        //             <p>Gender: Male</p>
+        //             <p>Mua: bot mi</p>
+        //             <p>Phu gia: dau</p>
         //         </div>
-        //     );
-        // }
-        function Support1(props) {
+        //     )
+        // };
+        function Dicho(props) {
             return (
                 <div>
-                    <p>Name: {props.name}</p>
-                    <p>Gender: {props.gender}</p>
+                    <p>Mua: {props.mua}</p>
+                    <p>Phu gia: {props.phugia}</p>
+                </div>
+            );
+        }
+        // function Lambanh() {
+        //     return (
+        //         <div>
+        //             <p>Tron bot: do bot vao bat</p>
+        //             <p>Ran: cho bot vao chao ran</p>
+        //         </div>
+        //     )
+        // };
+        function Lambanh(props) {
+            return (
+                <div>
+                    <p>Tron bot: {props.tronbot}</p>
+                    <p>Ran: {props.ran}</p>
+                </div>
+            );
+        }
+        // function Baybien() {
+        //     return (
+        //         <div>
+        //             <p>Trang tri: bay do an vao dia</p>
+        //             <p>An: an</p>
+        //         </div>
+        //     )
+        // };
+        function Baybien(props) {
+            return (
+                <div>
+                    <p>Trang tri: {props.trangtri}</p>
+                    <p>An: {props.an}</p>
                 </div>
             );
         }
 
-        // function Support2() {
+        // function Hoantat() {
         //     return (
         //         <div>
-        //             <p>IT</p>
-        //             <p>VietNam</p>
+        //             <h1>Chao mung den bua an</h1>
+        //             <Dicho />
+        //             <Lambanh />
+        //             <Baybien />
+        //         </div>
+        //     )
+        // };
+        // function Hoantat() {
+        //     return (
+        //         <div>
+        //             <h1>huhuhu</h1>
+        //             <Dicho mua="trung" phugia="mi chinh" />
+        //             <Lambanh tronbot="tron deu" ran="xeo xeo" />
+        //             <Baybien trangtri="dep" an="nhoem nhoem" />
         //         </div>
         //     );
-        // }
+        // };
 
-        function Support2(props) {
-            return (
-                <div>
-                    <p>Study: {props.study}</p>
-                    <p>Country: {props.country}</p>
-                </div>
-            );
+        const make = {
+            mua: "thit",
+            phugia: "nuoc mam",
+            tronbot: "nhung nuoc",
+            ran: "luoc",
+            trangtri: "dia",
+            an: "ngon"
         }
 
-        const obj = {
-            name: 'Loc',
-            gender: 'Male',
-            study: 'IT',
-            country: 'VietName'
-        };
-        function Main() {
+        function Hoantat() {
             return (
                 <div>
-                    <h1>Hello</h1>
-                    <Support1 name={obj.name} gender={obj.gender} />
-                    <Support2 study={obj.study} country={obj.country} />
-                </div>
-            );
+                    <h1>hola hola</h1>
+                    <Dicho mua={make.mua} phugia={make.phugia} />
+                    <Lambanh tronbot={make.tronbot} ran={make.ran} />
+                    <Baybien trangtri={make.trangtri} an={make.an} />
+                </div>);
         }
 
         ReactDOM.render(
-            <Main />,
+            <Hoantat />,
             document.getElementById('root')
         );
-
-        ReactDOM.render(<Main />, document.getElementById('element'));
+        ReactDOM.render(
+            <Hoantat />,
+            document.getElementById('element')
+        );
     </script>
 </body>
 
