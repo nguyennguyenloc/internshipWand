@@ -15,6 +15,9 @@ export default class DisplayItem extends React.Component {
             <button className="but1" onClick={this.props.handleDelete.bind(null, todo.id)} >
                 Delete
             </button>
+            <button className="but1" onClick={this.props.handleDelete.bind(null, todo.id)} >
+                Edit
+            </button>
         </li>
     };
 }

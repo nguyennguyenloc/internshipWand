@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>React include Component</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #root {
+            background-color: #b3eaff;
+            padding: 10px;
+        }
+
+        #element {
+            background-color: red;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="element"></div>
+    <script type="text/babel">
+        // function Support1() {
+        //     return (
+        //         <div>
+        //             <p>Name: loc</p>
+        //             <p>Gender: Male</p>
+        //         </div>
+        //     );
+        // }
+        function Support1(props) {
+            return (
+                <div>
+                    <p>Name: {props.name}</p>
+                    <p>Gender: {props.gender}</p>
+                </div>
+            );
+        }
+
+        // function Support2() {
+        //     return (
+        //         <div>
+        //             <p>IT</p>
+        //             <p>VietNam</p>
+        //         </div>
+        //     );
+        // }
+
+        function Support2(props) {
+            return (
+                <div>
+                    <p>Study: {props.study}</p>
+                    <p>Country: {props.country}</p>
+                </div>
+            );
+        }
+
+        function Main() {
+            return (
+                <div>
+                    <h1>Hello</h1>
+                    <Support1 name="A" gender="Male" />
+                    <Support2 study="IT" country="VN" />
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <Main />,
+            document.getElementById('root')
+        );
+
+        ReactDOM.render(<Main />, document.getElementById('element'));
+    </script>
+</body>
+
+</html>
