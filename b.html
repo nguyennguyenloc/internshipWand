@@ -59,12 +59,18 @@
             );
         }
 
+        const obj = {
+            name: 'Loc',
+            gender: 'Male',
+            study: 'IT',
+            country: 'VietName'
+        };
         function Main() {
             return (
                 <div>
                     <h1>Hello</h1>
-                    <Support1 name="A" gender="Male" />
-                    <Support2 study="IT" country="VN" />
+                    <Support1 name={obj.name} gender={obj.gender} />
+                    <Support2 study={obj.study} country={obj.country} />
                 </div>
             );
         }

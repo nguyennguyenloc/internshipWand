@@ -36,12 +36,29 @@ function Study(props) {
     </div>
   );
 }
+
+const obj = {
+  name: "Loc",
+  gender: "Male",
+  study: "IT",
+  country: "Viet Nam"
+}
+// function App() {
+//   return (
+//     <div>
+//       <h1>hiuhihihiu</h1>
+//       <Name name="Loc" gender="Male" />
+//       <Study study="It" country="Viet Nam" />
+//     </div>
+//   );
+// }
+
 function App() {
   return (
     <div>
-      <h1>hiuhihihiu</h1>
-      <Name name="Loc" gender="Male" />
-      <Study study="It" country="Viet Nam" />
+      <h1>Gioi thieu</h1>
+      <Name name={obj.name} gender={obj.gender} />
+      <Study study={obj.study} country={obj.country} />
     </div>
   );
 }
