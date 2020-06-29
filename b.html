@@ -51,8 +51,9 @@
         function Lambanh(props) {
             return (
                 <div>
-                    <p>Tron bot: {props.nau.tronbot}</p>
-                    <p>Ran: {props.nau.ran}</p>
+                    <Dicho mua={make.mua} phugia={make.phugia} />
+                    <p>Tron bot: {props.lambanh.tronbot}</p>
+                    <p>Ran: {props.lambanh.ran}</p>
                 </div>
             );
         }
@@ -67,6 +68,7 @@
         function Baybien(props) {
             return (
                 <div>
+                    <Lambanh lambanh={props.nau} />
                     <p>Trang tri: {props.nau.trangtri}</p>
                     <p>An: {props.nau.an}</p>
                 </div>
@@ -108,9 +110,9 @@
             return (
                 <div>
                     <h1>hola hola</h1>
-                    <Dicho mua={make.mua} phugia={make.phugia} />
-                    <Lambanh nau={make.nau} nau={make.nau} />
-                    <Baybien nau={make.nau} nau={make.nau} />
+
+
+                    <Baybien nau={make.nau} />
                 </div>);
         }
 

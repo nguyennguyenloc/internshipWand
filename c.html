@@ -49,6 +49,7 @@
         function Mot(props) {
             return (
                 <div>
+                    <Intro text={Choice.text} />
                     <p>One: {props.num.one}</p>
                     <p>Two: {props.num.two}</p>
                 </div>
@@ -59,8 +60,9 @@
         function Hai(props) {
             return (
                 <div>
-                    <p>Three: {props.num.three}</p>
-                    <p>Four: {props.num.four}</p>
+                    <Mot num={Choice.num} />
+                    <p>Three: {props.hai.three}</p>
+                    <p>Four: {props.hai.four}</p>
                 </div>
             );
         }
@@ -69,8 +71,9 @@
         function Ba(props) {
             return (
                 <div>
-                    <p>Five: {props.num.five}</p>
-                    <p>Six: {props.num.six}</p>
+                    <Hai hai={props.ba} />
+                    <p>Five: {props.ba.five}</p>
+                    <p>Six: {props.ba.six}</p>
                 </div>
             );
         }
@@ -79,10 +82,8 @@
             return (
                 <div>
                     <p>Number</p>
-                    <Intro text={Choice.text} />
-                    <Mot num={Choice.num} />
-                    <Hai num={Choice.num} />
-                    <Ba num={Choice.num} />
+
+                    <Ba ba={Choice.num} />
                 </div>
             );
         }
