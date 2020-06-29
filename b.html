@@ -51,8 +51,8 @@
         function Lambanh(props) {
             return (
                 <div>
-                    <p>Tron bot: {props.tronbot}</p>
-                    <p>Ran: {props.ran}</p>
+                    <p>Tron bot: {props.nau.tronbot}</p>
+                    <p>Ran: {props.nau.ran}</p>
                 </div>
             );
         }
@@ -67,8 +67,8 @@
         function Baybien(props) {
             return (
                 <div>
-                    <p>Trang tri: {props.trangtri}</p>
-                    <p>An: {props.an}</p>
+                    <p>Trang tri: {props.nau.trangtri}</p>
+                    <p>An: {props.nau.an}</p>
                 </div>
             );
         }
@@ -97,19 +97,20 @@
         const make = {
             mua: "thit",
             phugia: "nuoc mam",
-            tronbot: "nhung nuoc",
-            ran: "luoc",
-            trangtri: "dia",
-            an: "ngon"
+            nau: {
+                tronbot: "nhung nuoc",
+                ran: "luoc",
+                trangtri: "dia",
+                an: "ngon"
+            }
         }
-
         function Hoantat() {
             return (
                 <div>
                     <h1>hola hola</h1>
                     <Dicho mua={make.mua} phugia={make.phugia} />
-                    <Lambanh tronbot={make.tronbot} ran={make.ran} />
-                    <Baybien trangtri={make.trangtri} an={make.an} />
+                    <Lambanh nau={make.nau} nau={make.nau} />
+                    <Baybien nau={make.nau} nau={make.nau} />
                 </div>);
         }
 

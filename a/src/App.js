@@ -1,7 +1,13 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-
+function Wel(props) {
+  return (
+    <div>
+      <p>Text: {props.intro}</p>
+    </div>
+  );
+}
 // function Name() {
 //   return (
 //     <div>
@@ -13,8 +19,8 @@ import './App.css';
 function Name(props) {
   return (
     <div>
-      <p>Name: {props.name}</p>
-      <p>Gender: {props.gender}</p>
+      <p>Name: {props.info.name}</p>
+      <p>Gender: {props.info.gender}</p>
     </div>
   );
 }
@@ -31,17 +37,20 @@ function Name(props) {
 function Study(props) {
   return (
     <div>
-      <p>Study: {props.study}</p>
-      <p>Country: {props.country}</p>
+      <p>Study: {props.info.study}</p>
+      <p>Country: {props.info.country}</p>
     </div>
   );
 }
 
 const obj = {
-  name: "Loc",
-  gender: "Male",
-  study: "IT",
-  country: "Viet Nam"
+  intro: "hello",
+  info: {
+    name: "Loc",
+    gender: "Male",
+    study: "IT",
+    country: "Viet Nam"
+  }
 }
 // function App() {
 //   return (
@@ -57,8 +66,9 @@ function App() {
   return (
     <div>
       <h1>Gioi thieu</h1>
-      <Name name={obj.name} gender={obj.gender} />
-      <Study study={obj.study} country={obj.country} />
+      <Wel intro={obj.intro} />
+      <Name info={obj.info} />
+      <Study info={obj.info} />
     </div>
   );
 }
