@@ -78,21 +78,21 @@
             );
         }
 
-        function All() {
+        function All(props) {
             return (
                 <div>
                     <p>Number</p>
 
-                    <Ba ba={Choice.num} />
+                    <Ba ba={props.num} />
                 </div>
             );
         }
 
         ReactDOM.render(
-            <All />, document.getElementById('root')
+            <All num={Choice.num} />, document.getElementById('root')
         )
         ReactDOM.render(
-            <All />, document.getElementById('element')
+            <All num={Choice.num} />, document.getElementById('element')
         )
     </script>
 </body>
