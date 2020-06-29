@@ -16,16 +16,36 @@ function Wel(props) {
 //     </div>
 //   );
 // }
-function Name(props) {
-  return (
-    <div>
-      <Wel intro={obj.intro} />
-      <p>Name: {props.Name.name}</p>
-      <p>Gender: {props.Name.gender}</p>
-    </div>
-  );
-}
+// function Name(props) {
+//   return (
+//     <div>
+//       <Wel intro={obj.intro} />
+//       <p>Name: {props.Name.name}</p>
+//       <p>Gender: {props.Name.gender}</p>
+//     </div>
+//   );
+// }
+// var Name = (props) => {
+//   return (
+//     <div>
+//       <Wel intro={obj.intro} />
+//       <p>Name: {props.Name.name}</p>
+//       <p>Gender: {props.Name.gender}</p>
+//     </div>
+//   );
+// }
 
+class Name extends React.Component {
+  render() {
+    return (
+      <div>
+        <Wel intro={obj.intro} />
+        <p>Name: {this.props.Name.name}</p>
+        <p>Gender: {this.props.Name.gender}</p>
+      </div>
+    );
+  }
+}
 // function Study() {
 //   return (
 //     <div>
@@ -35,16 +55,36 @@ function Name(props) {
 //   );
 // }
 
-function Study(props) {
-  return (
-    <div>
-      <Name Name={props.Study} />
-      <p>Study: {props.Study.study}</p>
-      <p>Country: {props.Study.country}</p>
-    </div>
-  );
-}
+// function Study(props) {
+//   return (
+//     <div>
+//       <Name Name={props.Study} />
+//       <p>Study: {props.Study.study}</p>
+//       <p>Country: {props.Study.country}</p>
+//     </div>
+//   );
+// }
+// var Study = (props) => {
+//   return (
+//     <div>
+//       <Name Name={props.Study} />
+//       <p>Study: {props.Study.study}</p>
+//       <p>Country: {props.Study.country}</p>
+//     </div>
+//   );
+// }
 
+class Study extends React.Component {
+  render() {
+    return (
+      <div>
+        <Name Name={this.props.Study} />
+        <p>Study: {this.props.Study.study}</p>
+        <p>Country: {this.props.Study.country}</p>
+      </div>
+    );
+  }
+}
 const obj = {
   intro: "hello",
   info: {
