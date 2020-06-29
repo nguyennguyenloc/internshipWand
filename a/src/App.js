@@ -72,7 +72,14 @@ function App() {
     </div>
   );
 }
-
+// function App(props) {
+//   return (
+//     <div>
+//       <h1>Gioi thieu</h1>
+//       <Study Study={props.info} />
+//     </div>
+//   );
+// }
 // function Dicho() {
 //   return (
 //     <div>

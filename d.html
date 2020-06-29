@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>React include Component</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #root {
+            background-color: #b3eaff;
+            padding: 10px;
+        }
+
+        #element {
+            background-color: red;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="element"></div>
+    <script type="text/babel">
+        function Intro(props) {
+            return (
+                <div>
+                    <p>Lời chào : {props.intro}</p>
+                </div>
+            );
+        }
+
+        // function But() {
+        //     return (
+        //         <div>
+        //             <p>Tên: thienlong</p>
+        //             <p>Số lượng: 10</p>
+        //         </div>
+        //     );
+        // }
+        function But(props) {
+            return (
+                <div>
+                    <p>Tên: {props.info.ten}</p>
+                    <p>Số lượng: {props.info.soluong}</p>
+                </div>
+            );
+        }
+        // function But(props) {
+        //     return (
+        //         <div>
+        //             <p>Tên: {props.but.ten}</p>
+        //             <p>Số lượng: {props.but.soluong}</p>
+        //         </div>
+        //     );
+        // }
+        // function Vo() {
+        //     return (
+        //         <div>
+        //             <p>Nhãn hiệu: Hongha</p>
+        //             <p>Gia: 12</p>
+        //         </div>
+        //     );
+        // }
+        function Vo(props) {
+            return (
+                <div>
+                    <But info={value.info} />
+
+                    <p>Nhãn hiệu: {props.vo.nhanhieu}</p>
+                    <p>Gía: {props.vo.gia}</p>
+                </div>
+            );
+        }
+
+        // function Thuoc() {
+        //     return (
+        //         <div>
+        //             <p>Loai: thang</p>
+        //             <p>Chieu dai: 30cm</p>
+        //         </div>
+        //     );
+        // }
+        function Thuoc(props) {
+            return (
+                <div>
+                    <Vo vo={props.thuoc} />
+                    <p>Loai: {props.thuoc.loai}</p>
+                    <p>Chiêu dài: {props.thuoc.chieudai}</p>
+                </div>
+            );
+        }
+
+        // function All() {
+        //     return (
+        //         <div>
+        //             <p>=======</p>
+        //             <Intro />
+        //             <But />
+        //             <Vo />
+        //             <Thuoc />
+        //         </div>
+        //     );
+        // }
+
+        const value = {
+            text: "Olala",
+            info: {
+                ten: "ten",
+                soluong: "sl",
+                nhanhieu: "nhanhieu",
+                gia: "gia",
+                loai: "loai",
+                chieudai: "chieu dai"
+            }
+        }
+        // function All() {
+        //     return (
+        //         <div>
+        //             <p>=====</p>
+        //             <Intro />
+        //             <But ten="Thiên Long" soluong="10" />
+        //             <Vo nhanhieu="Hồng Hà" gia="111" />
+        //             <Thuoc loai="Cong" chieudai="15cm" />
+        //         </div>
+        //     );
+        // }
+        // function All() {
+        //     return (
+        //         <div>
+        //             <p>++++</p>
+        //             <Intro text={value.text} />
+        //             <But ten={value.info.ten} soluong={value.info.soluong} />
+        //             <Vo nhanhieu={value.info.nhanhieu} gia={value.info.gia} />
+        //             <Thuoc loai={value.info.loai} chieudai={value.info.chieudai} />
+        //         </div>
+        //     );
+        // }
+        function All(props) {
+            return (
+                <div>
+                    <p>******</p>
+                    <Intro intro={props.text} />
+                    <Thuoc thuoc={props.info} />
+                </div>
+            );
+        }
+        ReactDOM.render(
+            <All info={value.info} text={value.text} />, document.getElementById('root')
+
+        )
+        ReactDOM.render(
+            <All info={value.info} text={value.text} />, document.getElementById('element')
+        )
+    </script>
+</body>

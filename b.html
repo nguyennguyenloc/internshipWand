@@ -106,22 +106,20 @@
                 an: "ngon"
             }
         }
-        function Hoantat() {
+        function Hoantat(props) {
             return (
                 <div>
                     <h1>hola hola</h1>
-
-
-                    <Baybien nau={make.nau} />
+                    <Baybien nau={props.nau} />
                 </div>);
         }
 
         ReactDOM.render(
-            <Hoantat />,
+            <Hoantat nau={make.nau} />,
             document.getElementById('root')
         );
         ReactDOM.render(
-            <Hoantat />,
+            <Hoantat nau={make.nau} />,
             document.getElementById('element')
         );
     </script>
