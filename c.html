@@ -38,46 +38,117 @@
                 six: 's'
             }
         }
-        function Intro(props) {
-            return (
-                <div>
-                    <p>Text: {props.text}</p>
-                </div>
-            );
+        // function Intro(props) {
+        //     return (
+        //         <div>
+        //             <p>Text: {props.text}</p>
+        //         </div>
+        //     );
+        // }
+        // var Intro = (props) => {
+        //     return (
+        //         <div>
+        //             <p>Text: {props.text}</p>
+        //         </div>
+        //     );
+        // }
+        class Intro extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <p>Text: {this.props.text}</p>
+                    </div>
+                );
+            }
         }
+        // function Mot(props) {
+        //     return (
+        //         <div>
+        //             <Intro text={Choice.text} />
+        //             <p>One: {props.num.one}</p>
+        //             <p>Two: {props.num.two}</p>
+        //         </div>
+        //     );
+        // }
 
-        function Mot(props) {
-            return (
-                <div>
-                    <Intro text={Choice.text} />
-                    <p>One: {props.num.one}</p>
-                    <p>Two: {props.num.two}</p>
-                </div>
-            );
+        // var Mot = (props) => {
+        //     return (
+        //         <div>
+        //             <Intro text={Choice.text} />
+        //             <p>One: {props.num.one}</p>
+        //             <p>Two: {props.num.two}</p>
+        //         </div>
+        //     );
+        // }
+        class Mot extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Intro text={Choice.text} />
+                        <p>One: {this.props.num.one}</p>
+                        <p>Two: {this.props.num.two}</p>
+                    </div>
+                );
+            }
         }
-
-
-        function Hai(props) {
-            return (
-                <div>
-                    <Mot num={Choice.num} />
-                    <p>Three: {props.hai.three}</p>
-                    <p>Four: {props.hai.four}</p>
-                </div>
-            );
+        // function Hai(props) {
+        //     return (
+        //         <div>
+        //             <Mot num={Choice.num} />
+        //             <p>Three: {props.hai.three}</p>
+        //             <p>Four: {props.hai.four}</p>
+        //         </div>
+        //     );
+        // }
+        // var Hai = (props) => {
+        //     return (
+        //         <div>
+        //             <Mot num={Choice.num} />
+        //             <p>Three: {props.hai.three}</p>
+        //             <p>Four: {props.hai.four}</p>
+        //         </div>
+        //     );
+        // }
+        class Hai extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Mot num={Choice.num} />
+                        <p>Three: {this.props.hai.three}</p>
+                        <p>Four: {this.props.hai.four}</p>
+                    </div>
+                );
+            }
         }
-
-
-        function Ba(props) {
-            return (
-                <div>
-                    <Hai hai={props.ba} />
-                    <p>Five: {props.ba.five}</p>
-                    <p>Six: {props.ba.six}</p>
-                </div>
-            );
+        // function Ba(props) {
+        //     return (
+        //         <div>
+        //             <Hai hai={props.ba} />
+        //             <p>Five: {props.ba.five}</p>
+        //             <p>Six: {props.ba.six}</p>
+        //         </div>
+        //     );
+        // }
+        // var Ba = (props) => {
+        //     return (
+        //         <div>
+        //             <Hai hai={props.ba} />
+        //             <p>Five: {props.ba.five}</p>
+        //             <p>Six: {props.ba.six}</p>
+        //         </div>
+        //     );
+        // }
+        class Ba extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Hai hai={this.props.ba} />
+                        <p>Five: {this.props.ba.five}</p>
+                        <p>Six: {this.props.ba.six}</p>
+                    </div>
+                );
+            }
         }
-
         function All(props) {
             return (
                 <div>

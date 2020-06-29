@@ -32,13 +32,31 @@
         //         </div>
         //     )
         // };
-        function Dicho(props) {
-            return (
-                <div>
-                    <p>Mua: {props.mua}</p>
-                    <p>Phu gia: {props.phugia}</p>
-                </div>
-            );
+        // function Dicho(props) {
+        //     return (
+        //         <div>
+        //             <p>Mua: {props.mua}</p>
+        //             <p>Phu gia: {props.phugia}</p>
+        //         </div>
+        //     );
+        // }
+        // var Dicho = (props) => {
+        //     return (
+        //         <div>
+        //             <p>Mua: {props.mua}</p>
+        //             <p>Phu gia: {props.phugia}</p>
+        //         </div>
+        //     );
+        // }
+        class Dicho extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <p>Mua: {this.props.mua}</p>
+                        <p>Phu gia: {this.props.phugia}</p>
+                    </div>
+                );
+            }
         }
         // function Lambanh() {
         //     return (
@@ -48,14 +66,34 @@
         //         </div>
         //     )
         // };
-        function Lambanh(props) {
-            return (
-                <div>
-                    <Dicho mua={make.mua} phugia={make.phugia} />
-                    <p>Tron bot: {props.lambanh.tronbot}</p>
-                    <p>Ran: {props.lambanh.ran}</p>
-                </div>
-            );
+        // function Lambanh(props) {
+        //     return (
+        //         <div>
+        //             <Dicho mua={make.mua} phugia={make.phugia} />
+        //             <p>Tron bot: {props.lambanh.tronbot}</p>
+        //             <p>Ran: {props.lambanh.ran}</p>
+        //         </div>
+        //     );
+        // }
+        // var Lambanh = (props) => {
+        //     return (
+        //         <div>
+        //             <Dicho mua={make.mua} phugia={make.phugia} />
+        //             <p>Tron bot: {props.lambanh.tronbot}</p>
+        //             <p>Ran: {props.lambanh.ran}</p>
+        //         </div>
+        //     );
+        // }
+        class Lambanh extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Dicho mua={make.mua} phugia={make.phugia} />
+                        <p>Tron bot: {this.props.lambanh.tronbot}</p>
+                        <p>Ran: {this.props.lambanh.ran}</p>
+                    </div>
+                );
+            }
         }
         // function Baybien() {
         //     return (
@@ -65,16 +103,35 @@
         //         </div>
         //     )
         // };
-        function Baybien(props) {
-            return (
-                <div>
-                    <Lambanh lambanh={props.nau} />
-                    <p>Trang tri: {props.nau.trangtri}</p>
-                    <p>An: {props.nau.an}</p>
-                </div>
-            );
+        // function Baybien(props) {
+        //     return (
+        //         <div>
+        //             <Lambanh lambanh={props.nau} />
+        //             <p>Trang tri: {props.nau.trangtri}</p>
+        //             <p>An: {props.nau.an}</p>
+        //         </div>
+        //     );
+        // }
+        // var Baybien = (props) => {
+        //     return (
+        //         <div>
+        //             <Lambanh lambanh={props.nau} />
+        //             <p>Trang tri: {props.nau.trangtri}</p>
+        //             <p>An: {props.nau.an}</p>
+        //         </div>
+        //     );
+        // }
+        class Baybien extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Lambanh lambanh={this.props.nau} />
+                        <p>Trang tri: {this.props.nau.trangtri}</p>
+                        <p>An: {this.props.nau.an}</p>
+                    </div>
+                );
+            }
         }
-
         // function Hoantat() {
         //     return (
         //         <div>
