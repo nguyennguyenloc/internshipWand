@@ -30,21 +30,31 @@
             constructor(props) {
                 super(props);
                 this.state = {
-                    name: " Nguyễn Văn A",
-                    age: 20
+                    user: [
+                        { name: " Nguyễn Văn A", age: 18 },
+                        { name: " Nguyễn Văn B", age: 18 },
+                        { name: " Nguyễn Văn C", age: 18 }
+                    ],
+                    job: "Student"
                 };
             };
             changed = () => {
                 this.setState({
-                    name: "Nguyễn Văn B",
-                    age: 18
+                    user: [
+                        { name: " Lê Văn A", age: 18 },
+                        { name: " Lê Văn B", age: 18 },
+                        { name: " Lê Văn C", age: 18 }
+                    ],
+                    job: "Teacher"
                 })
             }
             render() {
                 return (
                     <div>
-                        <p>Name: {this.state.name}</p>
-                        <p>Age: {this.state.age}</p>
+                        <p>Name: {this.state.user[0].name} Age: {this.state.user[0].age}</p>
+                        <p>Name: {this.state.user[1].name} Age: {this.state.user[1].age}</p>
+                        <p>Name: {this.state.user[2].name} Age: {this.state.user[2].age}</p>
+                        <p>Job: {this.state.job}</p>
                         <button type="button" onClick={this.changed}>Button</button>
                     </div>
                 );
