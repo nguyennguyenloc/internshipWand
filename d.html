@@ -27,14 +27,21 @@
     <div id="root"></div>
     <div id="element"></div>
     <script type="text/babel">
-        function Intro(props) {
+        // function Intro(props) {
+        //     return (
+        //         <div>
+        //             <p>Lời chào : {props.intro}</p>
+        //         </div>
+        //     );
+        // }
+
+        var Intro = (props) => {
             return (
                 <div>
                     <p>Lời chào : {props.intro}</p>
                 </div>
             );
         }
-
         // function But() {
         //     return (
         //         <div>
@@ -43,7 +50,15 @@
         //         </div>
         //     );
         // }
-        function But(props) {
+        // function But(props) {
+        //     return (
+        //         <div>
+        //             <p>Tên: {props.info.ten}</p>
+        //             <p>Số lượng: {props.info.soluong}</p>
+        //         </div>
+        //     );
+        // }
+        var But = (props) => {
             return (
                 <div>
                     <p>Tên: {props.info.ten}</p>
@@ -67,17 +82,25 @@
         //         </div>
         //     );
         // }
-        function Vo(props) {
+        // function Vo(props) {
+        //     return (
+        //         <div>
+        //             <But info={value.info} />
+
+        //             <p>Nhãn hiệu: {props.vo.nhanhieu}</p>
+        //             <p>Gía: {props.vo.gia}</p>
+        //         </div>
+        //     );
+        // }
+        var Vo = (props) => {
             return (
                 <div>
                     <But info={value.info} />
 
                     <p>Nhãn hiệu: {props.vo.nhanhieu}</p>
                     <p>Gía: {props.vo.gia}</p>
-                </div>
-            );
+                </div>);
         }
-
         // function Thuoc() {
         //     return (
         //         <div>
@@ -86,7 +109,17 @@
         //         </div>
         //     );
         // }
-        function Thuoc(props) {
+        // function Thuoc(props) {
+        //     return (
+        //         <div>
+        //             <Vo vo={props.thuoc} />
+        //             <p>Loai: {props.thuoc.loai}</p>
+        //             <p>Chiêu dài: {props.thuoc.chieudai}</p>
+        //         </div>
+        //     );
+        // }
+
+        var Thuoc = (props) => {
             return (
                 <div>
                     <Vo vo={props.thuoc} />
@@ -95,7 +128,6 @@
                 </div>
             );
         }
-
         // function All() {
         //     return (
         //         <div>
