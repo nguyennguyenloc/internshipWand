@@ -19,8 +19,9 @@ function Wel(props) {
 function Name(props) {
   return (
     <div>
-      <p>Name: {props.info.name}</p>
-      <p>Gender: {props.info.gender}</p>
+      <Wel intro={obj.intro} />
+      <p>Name: {props.Name.name}</p>
+      <p>Gender: {props.Name.gender}</p>
     </div>
   );
 }
@@ -37,8 +38,9 @@ function Name(props) {
 function Study(props) {
   return (
     <div>
-      <p>Study: {props.info.study}</p>
-      <p>Country: {props.info.country}</p>
+      <Name Name={props.Study} />
+      <p>Study: {props.Study.study}</p>
+      <p>Country: {props.Study.country}</p>
     </div>
   );
 }
@@ -66,9 +68,7 @@ function App() {
   return (
     <div>
       <h1>Gioi thieu</h1>
-      <Wel intro={obj.intro} />
-      <Name info={obj.info} />
-      <Study info={obj.info} />
+      <Study Study={obj.info} />
     </div>
   );
 }
