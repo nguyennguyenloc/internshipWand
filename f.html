@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>React include Component</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #root {
+            background-color: #b3eaff;
+            padding: 10px;
+        }
+
+        #element {
+            background-color: red;
+            padding: 10px;
+        }
+
+        #second {
+            background-color: yellowgreen;
+            padding: 10px;
+        }
+
+        #value {
+            padding: 10px;
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="element"></div>
+    <div id="root"></div>
+    <div id="second"></div>
+    <div id="value"></div>
+    <script type="text/babel">
+        // function Intro(props) {
+        //     return (
+        //         <div>
+        //             <p>{props.text}</p>
+        //         </div>
+        //     );
+        // }
+        // var Intro = (props) => {
+        //     return (
+        //         <div>
+        //             <p>{props.text}</p>
+        //         </div>
+        //     );
+        // }
+        class Intro extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <p>{this.props.text}</p>
+                    </div>
+                );
+            }
+        }
+        // function Student(props) {
+        //     return (
+        //         <div>
+        //             <Intro text={value.text} />
+        //             <p>Name:{props.info.name}</p>
+        //             <p>Age: {props.info.age}</p>
+        //         </div>
+        //     );
+        // }
+        // var Student = (props) => {
+        //     return (
+        //         <div>
+        //             <Intro text={value.text} />
+        //             <p>Name:{props.info.name}</p>
+        //             <p>Age: {props.info.age}</p>
+        //         </div>
+        //     );
+        // }
+        class Student extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Intro text={value.text} />
+                        <p>Name:{this.props.info.name}</p>
+                        <p>Age: {this.props.info.age}</p>
+                    </div>
+                );
+            }
+        }
+        // function Teacher(props) {
+        //     return (
+        //         <div>
+        //             <Student info={value.info} />
+        //             <p>Subject: {props.tea.subj}</p>
+        //             <p>Band: {props.tea.band}</p>
+        //         </div>
+        //     );
+        // }
+        // var Teacher = (props) => {
+        //     return (
+        //         <div>
+        //             <Student info={value.info} />
+        //             <p>Subject: {props.tea.subj}</p>
+        //             <p>Band: {props.tea.band}</p>
+        //         </div>
+        //     );
+        // }
+        class Teacher extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Student info={value.info} />
+                        <p>Subject: {this.props.tea.subj}</p>
+                        <p>Band: {this.props.tea.band}</p>
+                    </div>
+                );
+            }
+        }
+        // function School(props) {
+        //     return (
+        //         <div>
+        //             <Teacher tea={props.sch} />
+        //             <p>School:{props.sch.school}</p>
+        //             <p>Add: {props.sch.add}</p>
+        //         </div>
+        //     );
+        // }
+        // var School = (props) => {
+        //     return (
+        //         <div>
+        //             <Teacher tea={props.sch} />
+        //             <p>School:{props.sch.school}</p>
+        //             <p>Add: {props.sch.add}</p>
+        //         </div>
+        //     );
+        // }
+        class School extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Teacher tea={this.props.sch} />
+                        <p>School:{this.props.sch.school}</p>
+                        <p>Add: {this.props.sch.add}</p>
+                    </div>
+                );
+            }
+        }
+        const value = {
+            text: "Welcome School",
+            info: {
+                name: "Loc",
+                age: 23,
+                subj: "tin",
+                band: "student",
+                school: "vinh university",
+                add: "Viet Nam"
+            }
+        }
+        // function All(props) {
+        //     return (
+        //         <div>
+        //             <h1>About school</h1>
+        //             <School sch={props.info} />
+        //         </div>
+        //     );
+        // }
+        // var All = (props) => {
+        //     return (
+        //         <div>
+        //             <h1>About school</h1>
+        //             <School sch={props.info} />
+        //         </div>
+        //     );
+        // }
+        class All extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h1>About school</h1>
+                        <School sch={this.props.info} />
+                    </div>
+                );
+            }
+        }
+
+        class ExamState extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    name: "Loc"
+                }
+            }
+            render() {
+                return (
+                    <div>
+                        <p>Tên State: {this.state.name}</p>
+                    </div>
+                );
+            }
+        }
+
+        class StateValue extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    user: [
+                        { name: "Nguyễn Văn A", age: "18" },
+                        { name: "Nguyễn Văn A", age: "18" },
+                        { name: "Nguyễn Văn A", age: "18" },
+                        { name: "Nguyễn Văn A", age: "18" }
+                    ],
+                    info: "Student"
+                }
+            }
+            changed = () => {
+                this.setState({
+                    user: [
+                        { name: "Lê Văn A", age: "16" },
+                        { name: "Lê Văn A", age: "19" },
+                        { name: "Nên Văn A", age: 28 },
+                        { name: "Năn A", age: "18" }
+                    ],
+                    info: "Teacher"
+                })
+            }
+            render() {
+                return (
+                    <div>
+                        <p>Họ tên: {this.state.user[0].name}</p>
+                        <p>Họ tên: {this.state.user[1].name}</p>
+                        <p>Họ tên: {this.state.user[2].name}</p>
+                        <p>Họ tên: {this.state.user[3].name}</p>
+                        <p>Tuổi: {this.state.user[0].age}</p>
+                        <p>Tuổi: {this.state.user[1].age}</p>
+                        <p>Tuổi: {this.state.user[2].age}</p>
+                        <p>Tuổi: {this.state.user[3].age}</p>
+                        <p>Nghề nghiệp:{this.state.info}</p>
+                        <button type="button" onClick={this.changed}>Update</button>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<All info={value.info} />, document.getElementById('element'))
+        ReactDOM.render(<All info={value.info} />, document.getElementById('root'))
+        ReactDOM.render(<ExamState />, document.getElementById('second'))
+        ReactDOM.render(<StateValue />, document.getElementById("value"))
+    </script>
+</body>
+
+</html>
