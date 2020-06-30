@@ -30,6 +30,16 @@
             padding: 10px;
             background-color: orangered;
         }
+
+        #event {
+            padding: 10px;
+            background-color: rgb(0, 150, 130);
+        }
+
+        #event1 {
+            padding: 10px;
+            background-color: rgb(153, 250, 226);
+        }
     </style>
 </head>
 
@@ -38,6 +48,8 @@
     <div id="root"></div>
     <div id="second"></div>
     <div id="value"></div>
+    <div id="event"></div>
+    <div id="event1"></div>
     <script type="text/babel">
         // function Intro(props) {
         //     return (
@@ -244,10 +256,34 @@
                 );
             }
         }
+        const ActionButton = () => {
+            const handleClick = () => {
+                console.log('Button was clicked!');
+            }
+            return (
+                <div>
+                    <button onClick={handleClick}>click me</button>
+                </div>
+            );
+        }
+
+        const ActionLink = () => {
+            const handleClick = (e) => {
+                e.preventDefault()
+                console.log('Done clicked!');
+            }
+            return (
+                <div>
+                    <a href="#" onClick={handleClick}>Click!</a>
+                </div>
+            );
+        }
         ReactDOM.render(<All info={value.info} />, document.getElementById('element'))
         ReactDOM.render(<All info={value.info} />, document.getElementById('root'))
         ReactDOM.render(<ExamState />, document.getElementById('second'))
         ReactDOM.render(<StateValue />, document.getElementById("value"))
+        ReactDOM.render(<ActionButton />, document.getElementById("event"))
+        ReactDOM.render(<ActionLink />, document.getElementById("event1"))
     </script>
 </body>
 
