@@ -261,6 +261,31 @@
         ReactDOM.render(
             <All info={value.info} text={value.text} />, document.getElementById('element')
         )
+        class ExamState extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: ''
+                }
+            }
+            handleInput = () => {
+
+            }
+            handleSubmit = () => {
+
+            }
+            render() {
+                return (
+                    <div>
+                        <form>
+                            <input type="text" >
+                        </form>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<ExamState />, document.getElementById('second'))
+        ReactDOM.render(<StateValue />, document.getElementById("value"))
         ReactDOM.render(<ActionButton />, document.getElementById("event"))
         ReactDOM.render(<ActionLink />, document.getElementById("event1"))
     </script>
