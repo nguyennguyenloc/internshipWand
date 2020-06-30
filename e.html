@@ -84,8 +84,70 @@
                 );
             };
         };
+        class One extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: ''
+                }
+            }
+            handleInput = (event) => {
+                this.setState({
+                    value: event.target.value
+                })
+            }
+            handleSubmit = (event) => {
+                alert("in ra output: " + this.state.value);
+                event.preventDefault();
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleSubmit}>
+                            <label>Name
+                                <input type="text" value={this.state.value} onChange={this.handleInput} />
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            };
+        }
+        class Two extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: ''
+                }
+            }
+            handleInput = (event) => {
+                this.setState({
+                    value: event.target.value
+                })
+            }
+            handleSubmit = (event) => {
+                alert("Result:" + this.state.value)
+                event.preventDefault();
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleSubmit}>
+                            <label >Name
+                        <input type="text" value={this.state.value} onChange={this.handleInput} />
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            }
+        }
         ReactDOM.render(<Member />, document.getElementById('root'));
         ReactDOM.render(<Member />, document.getElementById('element'));
+        ReactDOM.render(<One />, document.getElementById('second'));
+        ReactDOM.render(<Two />, document.getElementById("value"));
+        // ReactDOM.render(< />, document.getElementById("event1"));
+        // ReactDOM.render(< />, document.getElementById("event"));
     </script>
 </body>
 

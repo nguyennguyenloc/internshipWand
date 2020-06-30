@@ -20,12 +20,36 @@
             background-color: red;
             padding: 10px;
         }
+
+        #second {
+            background-color: yellowgreen;
+            padding: 10px;
+        }
+
+        #value {
+            padding: 10px;
+            background-color: orangered;
+        }
+
+        #event {
+            padding: 10px;
+            background-color: rgb(0, 150, 130);
+        }
+
+        #event1 {
+            padding: 10px;
+            background-color: rgb(153, 250, 226);
+        }
     </style>
 </head>
 
 <body>
     <div id="root"></div>
     <div id="element"></div>
+    <div id="second"></div>
+    <div id="value"></div>
+    <div id="event"></div>
+    <div id="event1"></div>
     <script type="text/babel">
         const Choice = {
             text: 'Hola Hola Hola',
@@ -165,6 +189,131 @@
         ReactDOM.render(
             <All num={Choice.num} />, document.getElementById('element')
         )
+        class One extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: ''
+                }
+            }
+            handleInput = (event) => {
+                this.setState({
+                    value: event.target.value
+                })
+            }
+            handleSubmit = (event) => {
+                alert("this is result" + this.state.value);
+                event.preventDefault();
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleSubmit}>
+                            <label >Name
+                        <input type="text" value={this.state.value} onChange={this.handleInput} />
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            }
+        }
+        class Two extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: ''
+                }
+            }
+            handleInput = (event) => {
+                this.setState({
+                    value: event.target.value
+                })
+            }
+            handleSubmitt = (event) => {
+                alert("Ok content" + this.state.value)
+                event.preventDefault();
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleSubmitt}>
+                            <label >Message
+                            <textarea type="text" value={this.state.value} onChange={this.handleInput} />
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            }
+        }
+        class Three extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: 'javascript'
+                }
+            }
+            handleChoice = (event) => {
+                this.setState({ value: event.target.value })
+            }
+            handleDone = (event) => {
+                alert("Ok " + this.state.value);
+                event.preventDefault();
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleDone}>
+                            <select value={this.state.value} onChange={this.handleChoice}>
+                                <option value="html">HTML</option>
+                                <option value="javascript">JS</option>
+                                <option value="css">CSS</option>
+                                <option value="c#">C#</option>
+                            </select>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            }
+        }
+        class Four extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: 'reactjs'
+                }
+            }
+            handleOk = (event) => {
+                alert("ok good " + this.state.value);
+                event.preventDefault();
+            }
+            handleChoi = (event) => {
+                this.setState({ value: this.state.value })
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleOk}>
+                            <label>Chon gia tri:
+                        <select value={this.state.value} onChange={this.handleChoi}>
+                                    <option value="html">HTML</option>
+                                    <option value="css">CSS</option>
+                                    <option value="javascript">JS</option>
+                                    <option value="reactjs">ReactJS</option>
+                                </select>
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<One />, document.getElementById('second'));
+        ReactDOM.render(<Two />, document.getElementById("value"));
+        ReactDOM.render(<Three />, document.getElementById("event"));
+        ReactDOM.render(<Four />, document.getElementById("event1"));
+    </script>
     </script>
 </body>
 
