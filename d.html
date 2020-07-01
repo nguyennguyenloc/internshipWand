@@ -317,10 +317,78 @@
                 );
             }
         }
+        class Optionn extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: 'reactnative'
+                }
+            }
+            handleIn = (event) => {
+                this.setState({
+                    value: event.target.value
+                })
+            }
+            handleOut = (event) => {
+                alert("ok good " + this.state.value);
+                event.preventDefault();
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleOut}>
+                            <label>Nhập:
+                        <select value={this.state.value} onChange={this.handleIn}>
+                                    <option value="html"> HTML </option>
+                                    <option value="css">CSS</option>
+                                    <option value="js">JS</option>
+                                    <option value="reactnative">React Native</option>
+                                </select>
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            }
+        }
+        class SelecOp extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: 'Bon'
+                }
+            }
+            handleNhap = (event) => {
+                this.setState({
+                    value: event.target.value
+                })
+            }
+            handleXuat = (event) => {
+                alert("Out đầu ra: " + this.state.value);
+                event.preventDefault();
+
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleXuat}>
+                            <select value={this.state.value} onChange={this.handleNhap}>
+                                <option value="mot">Mot</option>
+                                <option value="hai">Hai</option>
+                                <option value="ba">Ba</option>
+                                <option value="Bon">Bốn</option>
+                            </select>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            }
+        }
         ReactDOM.render(<ExamState />, document.getElementById('second'))
         ReactDOM.render(<ActionButton />, document.getElementById("event"))
         ReactDOM.render(<ActionLink />, document.getElementById("event1"))
         ReactDOM.render(<StateValue />, document.getElementById("value"))
-
+        ReactDOM.render(<Optionn />, document.getElementById("root"))
+        ReactDOM.render(<SelecOp />, document.getElementById("element"))
     </script>
 </body>

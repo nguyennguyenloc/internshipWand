@@ -134,7 +134,65 @@
                     <div>
                         <form onSubmit={this.handleSubmit}>
                             <label >Name
-                        <input type="text" value={this.state.value} onChange={this.handleInput} />
+                            <input type="text" value={this.state.value} onChange={this.handleInput} />
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            }
+        }
+        class Three extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: ''
+                }
+            }
+            handleNhap = (event) => {
+                this.setState({
+                    value: event.target.value
+                })
+            }
+            handleXuat = (event) => {
+                alert("yes " + this.state.value);
+                event.preventDefault();
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleXuat}>
+                            <label>Nhập
+                                <input type="text" value={this.state.value} onChange={this.handleNhap} />
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            }
+        }
+        class Four extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    value: ''
+                }
+            }
+            handleInto = (event) => {
+                this.setState({
+                    value: event.target.value
+                })
+            }
+            handleOutto = (event) => {
+                alert("hiển thi " + this.state.value);
+                event.preventDefault();
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleOutto}>
+                            <label>Input:
+                        <textarea type="text" value={this.state.value} onChange={this.handleInto} />
                             </label>
                             <input type="submit" value="Submit" />
                         </form>
@@ -146,8 +204,8 @@
         ReactDOM.render(<Member />, document.getElementById('element'));
         ReactDOM.render(<One />, document.getElementById('second'));
         ReactDOM.render(<Two />, document.getElementById("value"));
-        // ReactDOM.render(< />, document.getElementById("event1"));
-        // ReactDOM.render(< />, document.getElementById("event"));
+        ReactDOM.render(<Three />, document.getElementById("event1"));
+        ReactDOM.render(<Four />, document.getElementById("event"));
     </script>
 </body>
 
