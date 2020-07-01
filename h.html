@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>React include Component</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #root {
+            background-color: #b3eaff;
+            padding: 10px;
+        }
+
+        #element {
+            background-color: red;
+            padding: 10px;
+        }
+
+        #second {
+            background-color: yellowgreen;
+            padding: 10px;
+        }
+
+        #value {
+            padding: 10px;
+            background-color: orangered;
+        }
+
+        #event {
+            padding: 10px;
+            background-color: rgb(0, 150, 130);
+        }
+
+        #event1 {
+            padding: 10px;
+            background-color: rgb(153, 250, 226);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="element"></div>
+    <div id="root"></div>
+    <div id="second"></div>
+    <div id="value"></div>
+    <div id="event"></div>
+    <div id="event1"></div>
+    <script type="text/babel">
+        class FormCheck extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    workDone: true,
+                    name: "Van Nguyễn"
+                }
+            }
+
+            handleChange = (event) => {
+                const target = event.target;
+                const value = target.type === 'checkbox' ? target.checked : target.value;
+                const name = target.name;
+                this.setState({
+                    [name]: value
+                })
+            }
+
+            handleSubmit = (event) => {
+                alert("submit " + this.state.workDone + " và " + this.state.name);
+                event.preventDefault();
+            }
+
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleSubmit}>
+                            <label>Check
+                                <input
+                                    name="workDone"
+                                    type="checkbox"
+                                    checked={this.state.workDone}
+                                    onChange={this.handleChange}
+                                />
+                            </label>
+                            <label>Nhập
+                                <input
+                                    name="name"
+                                    type="text"
+                                    value={this.state.name}
+                                    onChange={this.handleChange}
+                                />
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<FormCheck />, document.getElementById('element'))
+    </script>
+</body>
+
+</html>
