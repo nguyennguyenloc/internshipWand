@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>React include Component</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #root {
+            background-color: #b3eaff;
+            padding: 10px;
+        }
+
+        #element {
+            background-color: red;
+            padding: 10px;
+        }
+
+        #second {
+            background-color: yellowgreen;
+            padding: 10px;
+        }
+
+        #value {
+            padding: 10px;
+            background-color: orangered;
+        }
+
+        #event {
+            padding: 10px;
+            background-color: rgb(0, 150, 130);
+        }
+
+        #event1 {
+            padding: 10px;
+            background-color: rgb(153, 250, 226);
+        }
+    </style>
+
+<body>
+    <div id="element"></div>
+    <div id="root"></div>
+    <div id="second"></div>
+    <div id="value"></div>
+    <div id="event"></div>
+    <div id="event1"></div>
+    <script type="text/babel">
+        class Log extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    isLogin: false
+                }
+            }
+            handleLogin = () => {
+                this.setState({
+                    isLogin: true
+                })
+            }
+            handleLogout = () => {
+                this.setState({
+                    isLogin: false
+                })
+            }
+            render() {
+                const isLogin = this.state.isLogin;
+                let button;
+                if (isLogin) {
+                    button = <LogoutButton onClick={this.handleLogout} />
+                } else {
+                    button = <LoginButton onClick={this.handleLogin} />
+                }
+                return (
+                    <div>
+                        <Greeting isLogin={isLogin} />
+                        {button}
+                    </div>
+                );
+            }
+        }
+        const UserGreeting = (props) => {
+            return (
+                <div>
+                    <h1>Welcome!!!!!</h1>
+                </div>
+            );
+        }
+        const GuestGreeting = (props) => {
+            return (
+                <div>
+                    <h1>Hiiiiiiiiiii</h1>
+                </div>
+            );
+        }
+        const Greeting = (props) => {
+            const isLogin = this.state.isLogin;
+            if (isLogin) {
+                return <UserGreeting />;
+            }
+            return <GuestGreeting />;
+        }
+        const LoginButton = (props) => {
+            return (
+                <div>
+                    <button onClick={props.onClick}>Login</button>
+                </div>
+            );
+        }
+        const LogoutButton = (props) => {
+            return (
+                <div>
+                    <button onClick={props.onClick}>Logout</button>
+                </div>
+            );
+        }
+        ReactDOM.render(<Log />, document.getElementById('element'))
+    </script>
+</body>
+
+</html>
