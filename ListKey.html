@@ -62,31 +62,36 @@
         }
         const Numbers = [1, 3, 5, 7, 9];
         ReactDOM.render(<Display number={Numbers} />, document.getElementById('root'));
+        function ArrayListKey(props) {
+            const One = (
+                <ul>
+                    {props.post.map((po) =>
+                        <li key={po.id}>
+                            {po.id}
+                        </li>
+                    )}
+                </ul>
+            );
+            const Two = props.post.map((po) =>
+                <div key={po.id}>
+                    <h1>{po.title}</h1>
+                    <h2>{po.name}</h2>
+                </div>);
 
-        function ArrayListKey() {
-            const one = (props) => {
-                var a = props.post.map(() => {
-
-                })
-            }
-            const two = (props) => {
-                var b = props.post.map(() => {
-
-                })
-            }
             return (
                 <div>
-                    <one />
+                    {One}
                     <br />
-                    <two />
+                    {Two}
                 </div>
             );
         }
+
         const Posts = [
-            { id: '1', name: 'Nguyễn A', title: 'aaaa' },
-            { id: '2', name: 'Nguyễn B', title: 'bbbb' },
-            { id: '3', name: 'Nguyễn C', title: 'ccccc' },
-            { id: '4', name: 'Nguyễn D', title: 'ddddd' }
+            { id: '1', name: 'Nguyễn A', title: '123' },
+            { id: '2', name: 'Nguyễn B', title: '123' },
+            { id: '3', name: 'Nguyễn C', title: '345' },
+            { id: '4', name: 'Nguyễn D', title: '215' }
         ]
         ReactDOM.render(<ArrayListKey post={Posts} />, document.getElementById('element'))
     </script>
