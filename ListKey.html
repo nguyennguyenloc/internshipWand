@@ -48,23 +48,17 @@
     <div id="event"></div>
     <div id="event1"></div>
     <script type="text/babel">
-
-        const array = [2, 4, 6, 8, 10];
-        const Result = array.map((arr) => <li>{arr + 1}</li>)
-        ReactDOM.render(<ul>{Result}</ul>, document.getElementById('element'))
-
         function Display(props) {
             const num = props.number;
-            const Result = num.map((numb) => <li>{numb * 3}</li>);
+            const Result = num.map((numb) => <li key={numb.toString()}>{numb * 4}</li>)
             return (
                 <div>
                     <ul>{Result}</ul>
                 </div>
             );
         }
-        const numbers = [1, 1, 1, 1, 1];
-        ReactDOM.render(<Display number={numbers} />, document.getElementById('root'))
-
+        const Numbers = [1, 3, 5, 7, 9];
+        ReactDOM.render(<Display number={Numbers} />, document.getElementById('root'));
     </script>
 </body>
 
