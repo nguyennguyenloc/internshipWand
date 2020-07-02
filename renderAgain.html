@@ -71,9 +71,9 @@
                 const isLogin = this.state.isLogin;
                 let button;
                 if (isLogin) {
-                    button = <LogoutButton onClick={this.handleLogout} />
+                    button = <Logout onClick={this.handleLogout} />
                 } else {
-                    button = <LoginButton onClick={this.handleLogin} />
+                    button = <Login onClick={this.handleLogin} />
                 }
                 return (
                     <div>
@@ -83,40 +83,43 @@
                 );
             }
         }
-        const UserGreeting = (props) => {
-            return (
-                <div>
-                    <h1>Welcome!!!!!</h1>
-                </div>
-            );
-        }
-        const GuestGreeting = (props) => {
-            return (
-                <div>
-                    <h1>Hiiiiiiiiiii</h1>
-                </div>
-            );
-        }
-        const Greeting = (props) => {
-            const isLogin = this.state.isLogin;
-            if (isLogin) {
-                return <UserGreeting />;
-            }
-            return <GuestGreeting />;
-        }
-        const LoginButton = (props) => {
+        const Login = (props) => {
             return (
                 <div>
                     <button onClick={props.onClick}>Login</button>
                 </div>
             );
         }
-        const LogoutButton = (props) => {
+
+        const Logout = (props) => {
             return (
                 <div>
                     <button onClick={props.onClick}>Logout</button>
                 </div>
             );
+        }
+
+        const UserGreeting = (props) => {
+            return (
+                <div>
+                    <h1>Hey, Welcome!</h1>
+                </div>
+            );
+        }
+        const GuestGreeting = (props) => {
+            return (
+                <div>
+                    <h1>Sign up!</h1>
+                </div>
+            );
+        }
+        const Greeting = (props) => {
+            const isLogin = props.isLogin;
+            if (isLogin) {
+                return <UserGreeting />
+            }
+            return <GuestGreeting />
+
         }
         ReactDOM.render(<Log />, document.getElementById('element'))
     </script>
