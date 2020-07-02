@@ -51,68 +51,67 @@
             constructor(props) {
                 super(props);
                 this.state = {
-                    Isloggin: false
+                    isLogin: false
                 }
             }
-            handleLoginClick = () => {
-                this.setState({ Isloggin: true })
+            handleLogin = (props) => {
+                this.setState({ isLogin: true })
             }
-            handleLogoutClick = () => {
-                this.setState({ Isloggin: false })
+            handleLogout = (props) => {
+                this.setState({ isLogin: false })
             }
-            render() {
-                const Isloggin = this.state.Isloggin;
-                let button;
-                if (Isloggin) {
-                    button = <LogoutButton onClick={this.handleLogoutClick} />
-                } else {
-                    button = <LoginButton onClick={this.handleLoginClick} />
-                }
 
+            render() {
+                const isLogin = this.state.isLogin;
+                let button;
+                if (isLogin) {
+                    button = <Logout onClick={this.handleLogout} />
+                } else {
+                    button = <Login onClick={this.handleLogin} />
+                }
                 return (
                     <div>
-                        <Greeting Isloggin={Isloggin} />
+                        <Greeting isLogin={isLogin} />
                         {button}
                     </div>
                 );
             }
         }
-        const UserGreeting = (props) => {
-            return (
-                <div>
-                    <h1>Welcomeeeeeeee </h1>
-                </div>
-            );
-        }
-        const GuestGreeting = (props) => {
-            return (
-                <div>
-                    <h1>Please Sign innnnnnnnnnn!</h1>
-                </div>
-            );
-        }
-        const Greeting = (props) => {
-            const Isloggin = props.Isloggin;
-            if (Isloggin) {
-                return <UserGreeting />;
-            }
-            return <GuestGreeting />;
-        };
-        const LoginButton = (props) => {
-            return (
-                <div>
-                    <button onClick={props.onClick}>Login</button>
-                </div>
-            );
-        }
-        const LogoutButton = (props) => {
+        const Logout = (props) => {
             return (
                 <div>
                     <button onClick={props.onClick}>Logout</button>
                 </div>
             );
         }
-
+        const Login = (props) => {
+            return (
+                <div>
+                    <button onClick={props.onClick}>Login</button>
+                </div>
+            );
+        }
+        const UserGreeting = (props) => {
+            return (
+                <div>
+                    <h1>Welcome !</h1>
+                </div>
+            );
+        }
+        const GuestGreeting = (props) => {
+            return (
+                <div>
+                    <h1>Please Sign Up</h1>
+                </div>
+            );
+        }
+        const Greeting = (props) => {
+            const isLogin = props.isLogin;
+            if (isLogin) {
+                return <UserGreeting />
+            }
+            return <GuestGreeting />
+        }
 
         ReactDOM.render(<CheckLogin />, document.getElementById('root'));
         // ReactDOM.render(<Member />, document.getElementById('element'));

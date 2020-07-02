@@ -1,0 +1,86 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>React include Component</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #root {
+            background-color: #b3eaff;
+            padding: 10px;
+        }
+
+        #element {
+            background-color: red;
+            padding: 10px;
+        }
+
+        #second {
+            background-color: yellowgreen;
+            padding: 10px;
+        }
+
+        #value {
+            padding: 10px;
+            background-color: orangered;
+        }
+
+        #event {
+            padding: 10px;
+            background-color: rgb(0, 150, 130);
+        }
+
+        #event1 {
+            padding: 10px;
+            background-color: rgb(153, 250, 226);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="element"></div>
+    <div id="root"></div>
+    <div id="second"></div>
+    <div id="value"></div>
+    <div id="event"></div>
+    <div id="event1"></div>
+    <script type="text/babel">
+
+        const array = [2, 4, 6, 8, 10];
+        const Result = array.map((arr) => <li>{arr + 1}</li>)
+        ReactDOM.render(<ul>{Result}</ul>, document.getElementById('element'))
+
+        function Display(props) {
+            const num = props.number;
+            const Result = num.map((numb) => <li>{numb * 3}</li>);
+            return (
+                <div>
+                    <ul>{Result}</ul>
+                </div>
+            );
+        }
+        const numbers = [1, 1, 1, 1, 1];
+        ReactDOM.render(<Display number={numbers} />, document.getElementById('root'))
+        // const num = [2, 4, 6, 8, 10];
+        // const list = num.map((so) => <li>{so * 2}</li>);
+        // ReactDOM.render(<ul>{list}</ul>, document.getElementById('element'))
+
+        // function Displayall(props) {
+        //     const one = props.number;
+        //     const display = one.map((sott) => <li>{sott * 2}</li>);
+        //     return (
+        //         <div>
+        //             <ul>{display}</ul>
+        //         </div>
+        //     );
+        // }
+
+        // const numbers = [3, 5, 7, 11, 13];
+        // ReactDOM.render(<Displayall number={numbers} />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
