@@ -28,8 +28,8 @@ class EditTask extends Component {
                             defaultValue={this.state.editItem.name}
                             onChange={this.changedName} />
                     </div>
-                    <button type="submit" style={{ marginRight: 5 + 'px' }} className="btn btn-default" onClick={this.handleEditTask}>Add</button>
-                    <button type="button" className="btn btn-default" onClick={this.props.closeForm}>Back</button>
+                    <button type="submit" style={{ marginRight: 5 + 'px' }} className="btn btn-primary" onClick={this.handleEditTask}>Add</button>
+                    <button type="button" className="btn btn-secondary" onClick={this.props.closeForm}>Back</button>
                 </div>
             </React.Fragment>
         )

@@ -32,8 +32,8 @@ class AddTask extends Component {
                             <label>Name</label>
                             <input type="text" className="form-control" placeholder="Enter name of Task" onChange={this.isChangedName} />
                         </div>
-                        <button type="submit" style={{ marginRight: 5 + 'px' }} className="btn btn-default" onClick={this.handleAddTask}>Add</button>
-                        <button type="button" className="btn btn-default" onClick={this.linkList}>Back</button>
+                        <button type="submit" style={{ marginRight: 5 + 'px' }} className="btn btn-primary" onClick={this.handleAddTask}>Add</button>
+                        <button type="button" className="btn btn-secondary" onClick={this.linkList}>Back</button>
                     </div>
                 </React.Fragment>
             )

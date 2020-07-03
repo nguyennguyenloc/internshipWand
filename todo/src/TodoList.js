@@ -10,17 +10,32 @@ class TodoList extends Component {
     }
     render() {
         return (
-            <tr>
-                <td>
+            <div className="Todo">
+                <div className="Todo_inline Todo_inline--text">
                     {this.props.name}
-                </td>
-                <td>
-                    <button type="button" className="btn btn-outline-primary" onClick={this.handleEdit}> Edit</button>
-                </td>
-                <td>
-                    <button type="button" className="btn btn-outline-primary" onClick={this.handleDelete}> Delete</button>
-                </td>
-            </tr>
+                </div>
+
+                {/* <div className="Todo_inline">
+                    <div onClick={this.handleEdit}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div>
+                </div>
+                <div className="Todo_inline">
+                    <div onClick={this.handleDelete}> <i class="fa fa-trash" aria-hidden="true"></i></div>
+                </div> */}
+
+                <div className="a">
+                    <div className="Todo_inline">
+                        <div className="check"></div>
+                    </div>
+                </div>
+                <div className="">
+                    <div className="Todo_inline">
+                        <div onClick={this.handleEdit}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div>
+                    </div>
+                    <div className="Todo_inline ">
+                        <div onClick={this.handleDelete}> <i class="fa fa-trash" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </div>
 
         )
     };

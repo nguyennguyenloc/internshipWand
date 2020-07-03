@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import TodoList from './TodoList';
 import AddTask from './AddTask';
 import EditTask from './EditTask';
+
+
 class TaskList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: ['Task 1', 'Task 2'],
+            tasks: ['Task 1', 'Task 2', 'Task 3', 'Task 4'],
             showAddForm: false,
             showEditForm: false,
-            editTask: { id: -1, name: '' }
+            editTask: { id: -1, name: '' },
+            date: new Date().toLocaleString()
         }
     }
     setStatus = () => {
@@ -49,6 +52,10 @@ class TaskList extends Component {
             tasks: filteredTask
         })
     }
+    handleClearCompleted(event) {
+        var newTodos = this.state.todos.filter((todo) => { return !todo.done });
+        this.setState({ todos: newTodos });
+    }
     render() {
         if (this.state.showAddForm === true) {
             return (
@@ -60,32 +67,48 @@ class TaskList extends Component {
             )
         } else {
             return (
-                <div className="container">
-                    <br />
-                    <br />
-                    <button type="button" className="btn btn-outline-primary" onClick={this.setStatus}>Add Task</button>
-                    <h2>List Task</h2>
-                    <table className="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Name of task</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                this.state.tasks.map(function (name, index) {
-                                    return <TodoList name={name}
-                                        openEditForm={this.openEditForm}
-                                        getIndexTask={index}
-                                        editTask={this.editTask}
-                                        deleteTask={this.deleteTask} />
-                                }.bind(this))
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                <div className="Task container" >
+                    <div className="Task_header">
+                        <div className="Task_header_list Task_header_list--text">
+                            <p className="demo">{this.state.date}</p>
+                        </div>
+                        <div className="Task_header_list Task_header_list--highlight">
+                            <div className="" onClick={this.setStatus}><i class="fa fa-plus-circle" aria-hidden="true"></i> NEW</div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div className="">
+                        <div className="Task_header_title">
+                            TODO TASKS
+                        </div>
+                    </div>
+                    <div>
+                        {
+                            this.state.tasks.map(function (name, index) {
+                                return <TodoList name={name}
+                                    openEditForm={this.openEditForm}
+                                    getIndexTask={index}
+                                    editTask={this.editTask}
+                                    deleteTask={this.deleteTask} />
+                            }.bind(this))
+                        }
+                    </div>
+                    <hr />
+                    <div className="result">
+                        <p>Number of total tasks:
+                            {this.state.tasks.length}
+                        </p>
+                        <p>Number of total tasks Completed:
+                            {this.state.tasks.filter((todo) => { return todo.done }).length}
+                        </p>
+                        <p> Number of total tasks Pending:
+                            {this.state.tasks.filter((todo) => { return !todo.done }).length}
+                        </p>
+                        {/* <p>
+                            <button onClick={this.handleClearCompleted.bind(this)}>Clear Completed</button>
+                        </p> */}
+                    </div>
+                </div >
             )
         }
     };
