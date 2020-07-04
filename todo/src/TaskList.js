@@ -12,7 +12,10 @@ class TaskList extends Component {
             showAddForm: false,
             showEditForm: false,
             editTask: { id: -1, name: '' },
-            date: new Date().toLocaleString()
+            date1: new Date().getDate(),
+            date: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday"][new Date().getDate()],
+            month: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Octo", "Novem", "Dec"][new Date().getMonth() + 1],
+            years: new Date().getFullYear()
         }
     }
     setStatus = () => {
@@ -56,6 +59,11 @@ class TaskList extends Component {
         var newTodos = this.state.todos.filter((todo) => { return !todo.done });
         this.setState({ todos: newTodos });
     }
+    // change = () => {
+    //     this.setState({
+    //         tasks: ['Task A', 'Task B', 'Task C', 'Task D']
+    //     })
+    // }
     render() {
         if (this.state.showAddForm === true) {
             return (
@@ -70,10 +78,14 @@ class TaskList extends Component {
                 <div className="Task container" >
                     <div className="Task_header">
                         <div className="Task_header_list Task_header_list--text">
-                            <p className="demo">{this.state.date}</p>
+                            <div className="demo1 Todo_inline" col span="2">{this.state.date1}</div>
+                            <div className="Todo_inline">
+                                <div className="demo">{this.state.date}</div>
+                                <div className="demo">{this.state.month} {this.state.years}</div>
+                            </div>
                         </div>
                         <div className="Task_header_list Task_header_list--highlight">
-                            <div className="" onClick={this.setStatus}><i class="fa fa-plus-circle" aria-hidden="true"></i> NEW</div>
+                            <div className="demo2" onClick={this.setStatus}><i class="fa fa-plus-circle" aria-hidden="true"></i> NEW</div>
                         </div>
                     </div>
                     <hr />

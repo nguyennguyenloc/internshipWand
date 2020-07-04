@@ -27,7 +27,7 @@ class AddTask extends Component {
             return (
                 <React.Fragment>
                     <div className="container">
-                        <h2>Add New Task</h2>
+                        <h2 className="Task_header_title">Add New Task</h2>
                         <div className="form-group">
                             <label>Name</label>
                             <input type="text" className="form-control" placeholder="Enter name of Task" onChange={this.isChangedName} />

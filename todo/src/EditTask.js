@@ -19,7 +19,7 @@ class EditTask extends Component {
         return (
             <React.Fragment>
                 <div className="container">
-                    <h2>Edit task</h2>
+                    <h2 className="Task_header_title">Edit task</h2>
                     <div className="form-group">
                         <label>Name of task</label>
                         <input type="text"
@@ -28,8 +28,8 @@ class EditTask extends Component {
                             defaultValue={this.state.editItem.name}
                             onChange={this.changedName} />
                     </div>
-                    <button type="submit" style={{ marginRight: 5 + 'px' }} className="btn btn-primary" onClick={this.handleEditTask}>Add</button>
-                    <button type="button" className="btn btn-secondary" onClick={this.props.closeForm}>Back</button>
+                    <div type="submit" style={{ marginRight: 5 + 'px' }} className="" onClick={this.handleEditTask}>Add</div>
+                    <div className="" onClick={this.props.closeForm}>Back</div>
                 </div>
             </React.Fragment>
         )
