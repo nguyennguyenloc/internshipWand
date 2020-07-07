@@ -12,12 +12,20 @@ class App extends Component {
     ]
   }
   render() {
-    return (
-      <div className="App" >
-        {this.todoItems.length > 0 && this.todoItems.map((item) => <TodoItems item={item} />)}
-        {this.todoItems.length === 0 && " Nothing here "}
-      </div>
-    );
+    if (this.todoItems.length) {
+      return (
+        <div>
+          {this.todoItems.map((item) =>
+            <TodoItems item={item} />)}
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          Nothing Else
+        </div>
+      );
+    }
   }
 }
 export default App;

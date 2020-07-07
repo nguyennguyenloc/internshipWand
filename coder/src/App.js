@@ -2,38 +2,60 @@ import React, { Component } from 'react';
 import './App.css';
 import TodoItems from './Component/TodoItems';
 
+
 class App extends Component {
   constructor() {
     super();
-    this.todoItems = [
-      { title: "Tiêu đề", isComplete: true },
-      { title: "Tiêu đề 1", isComplete: false },
-      { title: "Tiêu đề 2", isComplete: false },
-      { title: "Tiêu đề 3", isComplete: true }
-    ]
+    this.state = {
+      todoItems: [
+        { title: "Tiêu đề", isComplete: true },
+        { title: "Tiêu đề 1", isComplete: false },
+        { title: "Tiêu đề 2", isComplete: false },
+        { title: "Tiêu đề 3", isComplete: true },
+        { title: "Tiêu đề 7", isComplete: true },
+        { title: "Tiêu đề 4", isComplete: true },
+        { title: "Tiêu đề 5", isComplete: false }
+      ]
+    }
   }
-  onItemClick() {
-    this.props.item = !this.props.item
+  onItemClick(item) {
+    // this.props.item = !this.props.item
+    return (event) => {
+      const isComplete = item.isComplete;
+      const { todoItems } = this.state;
+      const index = todoItems.indexOf(item);
+      this.setState({
+        todoItems: [
+          ...todoItems.slice(0, index),
+          {
+            ...item,
+            isComplete: !isComplete
+          },
+          ...todoItems.slice(index + 1)
+        ]
+      })
+    }
   }
   render() {
-    if (this.todoItems.length > 0) {
+    const { todoItems } = this.state;
+    if (todoItems.length) {
       return (
         <div className="App" >
-          {this.todoItems.map((item, index) =>
-            <TodoItems key={index} item={item} onClick={this.onItemClick} />)}
+          {todoItems.length && todoItems.map((item, index) =>
+            <TodoItems
+              key={index}
+              item={item}
+              onClick={this.onItemClick(item)} />
+          )
+          }
         </div>
       );
     } else {
-      return (<div className="App" >
-        "Nothing"
-      </div>);
+      return (
+        <div className="App" >
+          "Nothing"
+        </div>);
     }
-    // return (
-    //   <div>
-    //     {this.todoItems.length > 0 && this.todoItems.map((item, index) => <TodoItems key={index} item={item} />)}
-    //     {this.todoItems.length === 0 && 'Nothing here'}
-    //   </div>
-    // );
   }
 }
 export default App;

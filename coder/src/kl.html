@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>React include Component</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #root {
+            background-color: #b3eaff;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class All extends Component {
+            constructor() {
+                super();
+                this.state = {
+                    todoItems: [
+                        { title: "Tiêu đề", isComplete: true },
+                        { title: "Tiêu đề 1", isComplete: false },
+                        { title: "Tiêu đề 2", isComplete: false },
+                        { title: "Tiêu đề 3", isComplete: true },
+                        { title: "Tiêu đề 7", isComplete: true },
+                        { title: "Tiêu đề 4", isComplete: true },
+                        { title: "Tiêu đề 5", isComplete: false }
+                    ]
+                }
+            }
+            onItemClick(item) {
+                return (event) => {
+                    const isComplete = item.isComplete;
+                    const { todoItems } = this.state;
+                    const index = todoItems.indexOf(item);
+                    this.setState({
+                        todoItems: [
+                            ...todoItems.slice(0, index),
+                            {
+                                ...item,
+                                isComplete: !isComplete
+                            },
+                            ...todoItems.slice(index + 1)
+                        ]
+                    })
+                }
+            }
+            render() {
+                return (
+                    <div>
+                        {todoItems.length && todoItems.map((item, index) =>
+                            <TodoItems key={index} item={item} onClick={this.onItemClick(item)} />)}
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<All info={value.info} />, document.getElementById('root'))
+    </script>
+</body>
+
+</html>
