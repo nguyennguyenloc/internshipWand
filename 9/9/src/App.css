@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ol, ul { list-style: none; }
+img { border: none; vertical-align: top; }
+button {
+  background-color: #3a95ea;
+  border: 1px solid #2d87da;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 15px;
+}
+
+.Menu{
+  float: left;
+width:30%;
+border: 1px solid red;
+}
+.List{
+  float: right;
+  width: 70%;
+border: 1px solid yellow;
+
+}
+.section {
+  display: -webkit-flex;
+  display: flex;
+}

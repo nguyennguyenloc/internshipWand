@@ -59,11 +59,7 @@ class TaskList extends Component {
         var newTodos = this.state.todos.filter((todo) => { return !todo.done });
         this.setState({ todos: newTodos });
     }
-    // change = () => {
-    //     this.setState({
-    //         tasks: ['Task A', 'Task B', 'Task C', 'Task D']
-    //     })
-    // }
+
     render() {
         if (this.state.showAddForm === true) {
             return (
@@ -116,9 +112,6 @@ class TaskList extends Component {
                         <p> Number of total tasks Pending:
                             {this.state.tasks.filter((todo) => { return !todo.done }).length}
                         </p>
-                        {/* <p>
-                            <button onClick={this.handleClearCompleted.bind(this)}>Clear Completed</button>
-                        </p> */}
                     </div>
                 </div >
             )

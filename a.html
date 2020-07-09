@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>React include Component</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #root {
+            background-color: #b3eaff;
+            padding: 10px;
+        }
+
+        #element {
+            background-color: red;
+            padding: 10px;
+        }
+
+        #second {
+            background-color: yellowgreen;
+            padding: 10px;
+        }
+
+        #value {
+            padding: 10px;
+            background-color: orangered;
+        }
+
+        #event {
+            padding: 10px;
+            background-color: rgb(0, 150, 130);
+        }
+
+        #event1 {
+            padding: 10px;
+            background-color: rgb(153, 250, 226);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="element"></div>
+    <div id="root"></div>
+    <div id="second"></div>
+    <div id="value"></div>
+    <div id="event"></div>
+    <div id="event1"></div>
+    <script type="text/babel">
+        function AAA() {
+            return (
+                <div>1+1</div>
+            );
+        }
+        ReactDOM.render(<AAA />, document.getElementById('element'))
+        // ReactDOM.render(<All info={value.info} />, document.getElementById('root'))
+        // ReactDOM.render(<ExamState />, document.getElementById('second'))
+        // ReactDOM.render(<StateValue />, document.getElementById("value"))
+        // ReactDOM.render(<ActionButton />, document.getElementById("event"))
+        // ReactDOM.render(<ActionLink />, document.getElementById("event1"))
+    </script>
+</body>
+
+</html>
