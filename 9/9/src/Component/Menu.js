@@ -9,19 +9,30 @@ class Menu extends Component {
     }
     showButton = () => {
         if (this.state.statusButton) {
-            return <button onClick={(e) => this.props.formToggle(e)}>Add List</button>
+            return <div className="menuButton" onClick={(e) => this.props.formToggle(e)}><i class="fas fa-list-ul"></i> Add List</div>
         }
     }
     statusList = () => {
         if (this.state.statusList) {
-            return <button onClick={(e) => this.props.formToggle(e)}>Show List</button>
+            return <div className="menuButton" onClick={(e) => this.props.formToggle(e)}><i class="fas fa-list-ol"></i> Show List</div>
         }
     }
     render() {
         return (
             <div className="Menu ">
+                <div className="menuButton row">
+                    <div className="col-md-6">
+                        Importance
+                    </div>
+                    <div className="col-md-6">
+                        Importance
+                    </div>
+                </div>
+                <div className="menuButton">Planned</div>
+                <hr />
+                <div className="menuButton">Index</div>
+                <div className="menuButton">Idea</div>
                 <div>{this.showButton()}</div>
-                <button>List</button>
                 <div>{this.statusList()}</div>
             </div>
         )

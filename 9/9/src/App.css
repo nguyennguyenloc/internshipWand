@@ -12,14 +12,13 @@ button {
   cursor: pointer;
   padding: 8px 15px;
 }
-
 .Menu{
   float: left;
   width:25%;
   border: 1px solid red;
-  /* background-color: #5193f3; */
-  background: rgb(43,35,213);
-  background: linear-gradient(90deg, rgba(43,35,213,1) 0%, rgba(65,135,214,1) 100%);
+  background-color: #5193f3;
+  /* background: rgb(43,35,213);
+  background: linear-gradient(90deg, rgba(43,35,213,1) 0%, rgba(65,135,214,1) 100%); */
 }
 .List{
   float: right;
@@ -34,6 +33,7 @@ button {
 }
 .a{
   border: 1px solid blue;
+  margin: 10px;
 }
 .b{
   border: 1px solid green;
@@ -41,4 +41,10 @@ button {
 }
 .c{
   border: 1px solid pink;
+  padding: 200px;
+}
+.menuButton{
+  color:#fff;
+  text-align: center;
+  font-size: 20px;
 }

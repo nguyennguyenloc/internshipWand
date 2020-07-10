@@ -1,7 +1,7 @@
 .todoItems-done{
     background-color: yellow;
     text-decoration: line-through;
-    opacity: .5;
+    /* opacity: .5; */
 }
 .todoItems{
     color: gray;

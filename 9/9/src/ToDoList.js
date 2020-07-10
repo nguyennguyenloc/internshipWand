@@ -23,26 +23,27 @@ class ToDoList extends Component {
         })
     }
     //1
-    // editToDo = (x) => {
-    //     this.setState({ editMode: true, editItem: x })
-    // }
+    editToDo = (x) => {
+        this.setState({ editMode: true, editItem: x })
+    }
     //2
 
-    editToDo = (x) => {
-        this.setState(state => ({
-            todos: state.todos.map(todo => {
-                if (todo.title === x.title) {
-                    return {
-                        ...todo,
-                        status: todo.status === true ? false : true
-                    };
-                }
-                else {
-                    return todo;
-                }
-            })
-        }))
-    }
+    // editToDo = (x) => {
+    //     this.setState(state => ({
+    //         todos: state.todos.map(todo => {
+    //             if (todo.title === x.title) {
+    //                 return {
+    //                     ...todo,
+    //                     status: todo.status === true ? false : true
+    //                 };
+    //             }
+    //             else {
+    //                 return todo;
+    //             }
+    //         })
+    //     }))
+    // }
+
     addTodo = (todo) => {
         this.setState({
             todos: [...this.state.todos, todo]
@@ -83,7 +84,7 @@ class ToDoList extends Component {
                     {this.state.showAdd && <AddToDo onAdd={this.addTodo}></AddToDo>}
                     <button onClick={() => this.setState({ showAdd: !this.state.showAdd })}>+</button>
                     <table>
-                        <tr className="c">
+                        <tr className="">
                             <td className="">
                                 <div className="a">
                                     {todos.length && todos.map((item, index) =>
@@ -107,7 +108,7 @@ class ToDoList extends Component {
                                 {this.state.todos.map(x => {
                                     return (
                                         <div className="b">
-                                            <button onClick={() => { this.editToDo(x) }}>{this.state.editItem && (this.state.editItem.id === x.id) && "Hủy" || "Sửa"}</button>
+                                            <button onClick={() => { this.editToDo(x) }}>{this.state.editItem && (this.state.editItem.title === x.title) && "Hủy" || "Sửa"}</button>
                                             {/* <button onClick={() => this.editToDo(x)}>Edit</button> */}
                                         </div>
                                     );
