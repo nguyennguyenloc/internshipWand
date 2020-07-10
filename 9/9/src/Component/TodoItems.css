@@ -1,0 +1,9 @@
+.todoItems-done{
+    background-color: yellow;
+    text-decoration: line-through;
+    opacity: .5;
+}
+.todoItems{
+    color: gray;
+    font-size: 15px;
+}

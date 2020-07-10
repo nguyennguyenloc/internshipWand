@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
-import AddToDo from '../AddToDo';
 class Menu extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            statusButton: true,
+            statusList: true
+        }
+    }
+    showButton = () => {
+        if (this.state.statusButton) {
+            return <button onClick={(e) => this.props.formToggle(e)}>Add List</button>
+        }
+    }
+    statusList = () => {
+        if (this.state.statusList) {
+            return <button onClick={(e) => this.props.formToggle(e)}>Show List</button>
+        }
+    }
     render() {
         return (
             <div className="Menu ">
-                <h1>a</h1>
-                {/* <AddToDo />
-                {this.state.showAdd && <AddToDo onAdd={this.addTodo}></AddToDo>}
-                <button onClick={() => this.setState({ showAdd: !this.state.showAdd })}>Toggle add</button> */}
+                <div>{this.showButton()}</div>
+                <button>List</button>
+                <div>{this.statusList()}</div>
             </div>
         )
     };

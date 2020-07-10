@@ -15,16 +15,30 @@ button {
 
 .Menu{
   float: left;
-width:30%;
-border: 1px solid red;
+  width:25%;
+  border: 1px solid red;
+  /* background-color: #5193f3; */
+  background: rgb(43,35,213);
+  background: linear-gradient(90deg, rgba(43,35,213,1) 0%, rgba(65,135,214,1) 100%);
 }
 .List{
   float: right;
-  width: 70%;
-border: 1px solid yellow;
+  width: 75%;
+  border: 1px solid yellow;
+  background-color: #ffffff;
 
 }
 .section {
   display: -webkit-flex;
   display: flex;
+}
+.a{
+  border: 1px solid blue;
+}
+.b{
+  border: 1px solid green;
+  margin: 15px 0 15px 0;
+}
+.c{
+  border: 1px solid pink;
 }
