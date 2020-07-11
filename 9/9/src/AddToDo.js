@@ -21,13 +21,16 @@ class AddToDo extends Component {
     }
     render() {
         return (
-            <div>
-                <h3>ToDo List</h3>
+            <div className="addtodo">
+                <h3>Add List</h3>
+                <br />
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        Title: <input value={this.state.title} onChange={this.handleTitleChange} />
+                        Title: <input placeholder="Get some ..." value={this.state.title} onChange={this.handleTitleChange} />
+                        <button className="addtodo-butto" type="submit">Add</button>
                     </div>
-                    <button type="submit">Add</button>
+                    <br />
+                    {/* <button className="addtodo-button" type="submit">Add</button> */}
                 </form>
             </div >
         )

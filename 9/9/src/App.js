@@ -23,7 +23,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className=" section">
+      <div className=" container section">
         <Menu formToggle={(e) => this.changeStatusForm(e)} />
         {this.showForm()}
       </div>

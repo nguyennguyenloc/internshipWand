@@ -5,11 +5,11 @@ import TodoItems from './Component/TodoItems';
 class ToDoList extends Component {
     state = {
         todos: [
-            { title: "A", status: true },
-            { title: "B", status: false },
-            { title: "C", status: true },
-            { title: "D", status: false },
-            { title: "E", status: true }
+            { title: "Go for a walk", status: false },
+            { title: "Drink", status: false },
+            { title: "Do something else", status: true },
+            { title: "Test raname task", status: false },
+            { title: "Go to bed", status: true }
         ],
         showAdd: false,
         editMode: false,
@@ -81,8 +81,13 @@ class ToDoList extends Component {
         if (todos.length) {
             return (
                 <div>
+                    <br />
                     {this.state.showAdd && <AddToDo onAdd={this.addTodo}></AddToDo>}
-                    <button onClick={() => this.setState({ showAdd: !this.state.showAdd })}>+</button>
+                    <div className="todolist-add">
+                        <div className="todolist-add1">Life Cycle</div>
+                        <div className="todolist-add1" onClick={() => this.setState({ showAdd: !this.state.showAdd })}><i class="fas fa-plus"></i></div>
+                    </div>
+                    <br />
                     <table>
                         <tr className="">
                             <td className="">
@@ -99,7 +104,8 @@ class ToDoList extends Component {
                                 {this.state.todos.map(x => {
                                     return (
                                         <div className="b">
-                                            <button onClick={() => { this.deleteToDo(x) }}>Delete</button>
+                                            {/* <button onClick={() => { this.deleteToDo(x) }}><i class="fas fa-trash-alt"></i></button> */}
+                                            <div onClick={() => { this.deleteToDo(x) }}><i class="fas fa-trash-alt"></i></div>
                                         </div>
                                     );
                                 })}
@@ -108,8 +114,8 @@ class ToDoList extends Component {
                                 {this.state.todos.map(x => {
                                     return (
                                         <div className="b">
-                                            <button onClick={() => { this.editToDo(x) }}>{this.state.editItem && (this.state.editItem.title === x.title) && "Hủy" || "Sửa"}</button>
-                                            {/* <button onClick={() => this.editToDo(x)}>Edit</button> */}
+                                            {/* <button onClick={() => { this.editToDo(x) }}>{this.state.editItem && (this.state.editItem.title === x.title) && "Hủy" || "Sửa"}</button> */}
+                                            <div onClick={() => this.editToDo(x)}><i class="fas fa-edit"></i></div>
                                         </div>
                                     );
                                 })}
@@ -157,7 +163,5 @@ class ToDoList extends Component {
         //     </div>
         // )
     }
-
 };
-// }
 export default ToDoList;

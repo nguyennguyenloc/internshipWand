@@ -1,9 +1,16 @@
 .todoItems-done{
-    background-color: yellow;
+    /* background: rgb(153,127,247);
+background: linear-gradient(249deg, rgba(153,127,247,1) 0%, rgba(125,200,236,1) 100%); */
+    background: rgb(90,45,253);
+    background: linear-gradient(249deg, rgba(90,45,253,1) 0%, rgba(125,200,236,1) 100%);
+    /* background: rgb(65,135,214);
+    background: linear-gradient(90deg, rgba(65,135,214,1) 0%, rgba(43,35,213,1) 100%); */
     text-decoration: line-through;
+
     /* opacity: .5; */
 }
 .todoItems{
     color: gray;
     font-size: 15px;
+    background-color: #f8f8fa;
 }

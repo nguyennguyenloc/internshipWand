@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import './TodoItems.css';
-import doImg from '../img/do.svg';
-// import logoImg from '../img/logo.svg';
+import circleImg from '../img/circle.svg';
 import tickImg from '../img/tick.svg';
 class TodoItems extends Component {
     render() {
         const { item, onClick } = this.props;
-        let url = doImg;
+        let url = circleImg;
         if (item.status) {
             url = tickImg;
         }
