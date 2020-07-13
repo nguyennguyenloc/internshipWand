@@ -34,6 +34,7 @@ class AddTask extends Component {
                         </div>
                         <button type="submit" style={{ marginRight: 5 + 'px' }} className="btn btn-primary" onClick={this.handleAddTask}>Add</button>
                         <button type="button" className="btn btn-secondary" onClick={this.linkList}>Back</button>
+
                     </div>
                 </React.Fragment>
             )
