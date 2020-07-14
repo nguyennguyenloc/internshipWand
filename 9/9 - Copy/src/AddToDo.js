@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 // import TodoItems from './Component/TodoItems';
 class AddToDo extends Component {
-    // state = {
-    //     todos: [
-    //         { title: '' }
-    //     ],
-    //     showAdd: false,
-    //     showList: false
-    // }
-
     state = {
         title: '',
         showAdd: false,
@@ -24,45 +16,35 @@ class AddToDo extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.onAdd({
-            title: this.state.title
+            title: this.state.title,
         })
         this.setState({
             title: ''
         })
     }
-    close = () => {
-        // this.props.closeList();
-        alert("Sao ADD không ẩn")
-    }
-    close1 = () => {
-        this.props.closeListt({
-            showAdd: false,
-            showList: false
-        });
-    }
+
+    // close = () => {
+    //     alert("Cancel: quay lại màn hình, Add: add List")
+    // }
 
     render() {
-
         return (
             <div className="addtodo">
-                <h3>Add List</h3>
+                <h1>Add List</h1>
                 <br />
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        Title: <input placeholder="Get some ..." value={this.state.title} onChange={this.handleTitleChange} />
-                        <button className="addtodo-butto" type="submit">Add</button>
+                        <input className="w3-input" placeholder="Get some ..." value={this.state.title} onChange={this.handleTitleChange} />
                     </div>
-
                     <br />
-                    {/* <button className="addtodo-button" type="submit">Add</button> */}
+                    <div>
+                        <button className="addtodo-button addtodo-add" type="submit">Add</button>
+                        <button className="addtodo-button addtodo-cancel" onClick={this.props.closeList}>Cancel</button>
+                    </div>
                 </form>
-
-                <button className="addtodo-butto" type="submit" onClick={this.props.closeListt}>Cancel</button>
-                <button className="addtodo-butto" type="submit" onClick={this.close1}>Cancel3</button>
-                <button className="addtodo-butto" type="submit" onClick={this.close}>Cancel1</button>
+                {/* <button className="addtodo-button" type="submit" onClick={this.close}>Notice</button> */}
             </div >
         )
     };
-    // }
 }
 export default AddToDo;

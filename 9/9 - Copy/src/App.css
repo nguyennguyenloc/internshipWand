@@ -15,21 +15,32 @@ button {
 .Menu{
   float: left;
   width:25%;
-  /* border: 1px solid red; */
-  /* background-color: #5193f3; */
-  font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  /* background: rgb(43,35,213);
-  background: linear-gradient(90deg, rgba(43,35,213,1) 0%, rgba(65,135,214,1) 100%); */
-  background: rgb(90,45,253);
-  background: linear-gradient(0deg, rgba(90,45,253,1) 0%, rgba(125,200,236,1) 100%);
+  background: rgb(79,151,245);
+  background: linear-gradient(174deg, rgba(79,151,245,1) 0%, rgba(106,106,224,1) 100%);
 }
 .List{
   float: right;
   width: 75%;
   /* border: 1px solid yellow; */
   background-color: #ffffff;
+  padding: 0 20px;
+}
 
+.itemmmm .todoItems:first-of-type{
+  border-radius: 15px 15px 0px 0px!important;
+  -webkit-border-radius: 15px 15px 0px 0px!important;
+  -moz-border-radius: 15px 15px 0px 0px!important;
+  -ms-border-radius: 15px 15px 0px 0px!important;
+  -o-border-radius: 15px 15px 0px 0px!important;
+}
+
+.itemmmm .todoItems:last-of-type{
+  border-radius: 0px 0px 15px 15px  !important;
+  -webkit-border-radius: 0px 0px 15px 15px  !important;
+  -moz-border-radius: 0px 0px 15px 15px  !important;
+  -ms-border-radius: 0px 0px 15px 15px  !important;
+  -o-border-radius: 0px 0px 15px 15px  !important;
 }
 /* .section {
   display: -webkit-flex;
@@ -39,20 +50,20 @@ button {
   margin-left: 30px;
   /* width: 1000px; */
 }
-.b{
-  /* border: 1px solid green; */
-  /* margin: 20px; */
-  width: 700px;
-}
+/* .b{
+  border: 1px solid green;
+  margin: 20px;
+  margin-right: 16%;
+} */
 .c{
   border: 1px solid pink;
   padding: 200px;
 }
-.menuButton{
-  color:#fff;
+.menuButton {
+  color: #fff;
   text-align: center;
-  font-size: 20px;
-  padding-left: 30px;
+  font-size: 25px;
+  padding: 20px;
 }
 .menuButton1{
   text-align: left;
@@ -61,8 +72,9 @@ button {
   font-size: 50px;
 }
 .todolist-add{
-   /* text-align: right;  */
-   /* margin-right: 20%;  */
+   text-align: right; 
+   /* margin-right: 16%; */
+   padding: 30px 0; 
 }
 .todolist-add1{
   display: inline;
@@ -86,24 +98,46 @@ button {
 img {
   border: none;
   vertical-align: top;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .addtodo{
-  margin: 30px;
+  font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  background-color: #e7f1fe;
+  padding: 20px;
+  /* background-color: #c0e3f7; */
+  background: rgb(182,163,251);
+  background: linear-gradient(0deg, rgba(182,163,251,1) 0%, rgba(125,200,236,1) 100%);
+  /* background-color: #282e38; */
+  color: #fff;
+  text-align: center;
+  /* margin-right: 16%; */
 }
 .addtodo-button{
-  background-color: #4a9df6;
+  display: inline;
+  width: 100px;
+  text-align: center;
+  padding: 10px 0;
+  margin-right: 60px;
+}
+.addtodo-add{
+  background-color: #29b158;
   color: #fff;
+  font-family: 'Roboto', sans-serif;
+
+}
+.addtodo-cancel{
+  background-color: #f53649;
+  font-family: 'Roboto', sans-serif;
+  color:#fff;
 }
 button {
-  background-color: #3a95ea;
-  border: 1px solid #2d87da;
-  border-radius: 4px;
-  color: #fff;
+  border-radius: 30px;
+  border: none;
   cursor: pointer;
-  padding: 2px 6px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }
 .fa-trash-alt, .fa-edit{
   font-size: 35px;
@@ -113,5 +147,10 @@ button {
 }
 .fa-edit{
   color:#ed6a5f
-
+}
+/* div:first-child{
+  color:red;
+} */
+li :first-child{
+  color: red;
 }

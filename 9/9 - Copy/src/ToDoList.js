@@ -13,7 +13,7 @@ class ToDoList extends Component {
         ],
         showAdd: false,
         editMode: false,
-        showList: false
+        showList: true
     }
     // source khi chuyển delete sang item
     // deleteToDo = (todo) => {
@@ -53,7 +53,7 @@ class ToDoList extends Component {
     closeListt = () => {
         this.setState({
             showAdd: false,
-            showList: false
+            showList: true
         })
     }
     //Thêm
@@ -80,30 +80,29 @@ class ToDoList extends Component {
         const { todos } = this.state;
         if (todos.length) {
             return (
-                <div>
-                    <br />
+                <React.Fragment>
                     {/* ShowFormAdd */}
-                    {this.state.showAdd && <AddToDo onAdd={this.addTodo} ></AddToDo>}
+                    {this.state.showAdd && <AddToDo onAdd={this.addTodo} closeList={this.closeListt}></AddToDo>}
                     <div className="todolist-add">
-                        <button onClick={this.closeListt}>Cancel</button>
-                        <button onClick={this.closeListt}><i class="fas fa-home"></i></button>
                         <div className="todolist-add1">Life Cycle</div>
                         <div className="todolist-add1" onClick={() => this.setState({ showAdd: !this.state.showAdd })}><i class="fas fa-plus"></i></div>
                         <div className="todolist-add1" onClick={() => this.setState({ showList: !this.state.showList })}><i class="fas fa-list-ul"></i></div>
                     </div>
                     {/* ShowListAdd */}
-                    {
-                        this.state.showList &&
-                        todos.length && todos.map((item, index) =>
-                            <TodoItems
-                                key={index}
-                                item={item}
-                                onClick={this.onItemClick(item)}
-                            />
-                        )
-                    }
+                    <div className="itemmmm">
+                        {
+                            this.state.showList &&
+                            todos.length && todos.map((item, index) =>
+                                <TodoItems
+                                    key={index}
+                                    item={item}
+                                    onClick={this.onItemClick(item)}
+                                />
+                            )
+                        }
+                    </div>
 
-                    <br />
+                    {/* <br /> */}
                     {/* <table>
                         <tr className="">
                             <td className="">
@@ -141,7 +140,7 @@ class ToDoList extends Component {
                             </td>
                         </tr>
                     </table> */}
-                </div >
+                </React.Fragment >
             )
         }
 

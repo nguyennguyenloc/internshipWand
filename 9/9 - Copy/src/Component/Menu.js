@@ -11,8 +11,8 @@ class Menu extends Component {
         if (this.state.statusButton) {
             return <div className="menuButton row">
                 <div className="col-lg-2 col-md-2 col-sm-2"><i class="fas fa-list-ul"></i></div>
-                <div className="menuButton1 col-lg-6 col-md-6 col-sm-6" onClick={(e) => this.props.formToggle(e)}>  Add List</div>
-                <div className="col-lg-4 col-md-4 col-sm-4">1</div>
+                <div className="menuButton1 col-lg-8 col-md-8 col-sm-8" onClick={(e) => this.props.formToggle(e)}>  Add List</div>
+                <div className="col-lg-2 col-md-2 col-sm-2">1</div>
             </div>
         }
     }
@@ -27,8 +27,8 @@ class Menu extends Component {
         if (this.state.statusList) {
             return <div className="menuButton row">
                 <div className="col-lg-2 col-md-2 col-sm-2"><i class="fas fa-list-ul"></i></div>
-                <div className="menuButton1 col-lg-6 col-md-6 col-sm-6" onClick={(e) => this.props.formToggle(e)}> Show List </div>
-                <div className="col-lg-4 col-md-4 col-sm-4">1</div>
+                <div className="menuButton1 col-lg-8 col-md-8 col-sm-8" onClick={(e) => this.props.formToggle(e)}> Show List </div>
+                <div className="col-lg-2 col-md-2 col-sm-2">1</div>
             </div>
         }
     }
@@ -42,58 +42,55 @@ class Menu extends Component {
                 <br />
                 <div className="menuButton row">
                     <div className="col-lg-2 col-md-2 col-sm-2"><i class="fas fa-star"></i></div>
-                    <div className="menuButton1 col-lg-6 col-md-6 col-sm-6">
+                    <div className="menuButton1 col-lg-8 col-md-8 col-sm-8">
                         Importan
                     </div>
-                    <div className="col-lg-4 col-md-4 col-sm-4">
+                    <div className="col-lg-2 col-md-2 col-sm-2">
                         2
                     </div>
                 </div>
-                <br />
 
                 <div className="menuButton row">
                     <div className="col-lg-2 col-md-2 col-sm-2"><i class="fas fa-calendar-alt"></i></div>
-                    <div className="menuButton1 col-lg-6 col-md-6 col-sm-6">
+                    <div className="menuButton1 col-lg-8 col-md-8 col-sm-8">
                         Planned
                     </div>
-                    <div className="col-lg-4 col-md-4 col-sm-4">
+                    <div className="col-lg-2 col-md-2 col-sm-2">
                         1
                     </div>
                 </div>
-                <hr />
+                {/* <hr /> */}
+                <hr style={{ border: '1px solid #5977de' }} />
                 <div className="menuButton row">
                     <div className="col-lg-2 col-md-2 col-sm-2"><i class="far fa-check-square"></i></div>
-                    <div className="menuButton1 col-lg-6 col-md-6 col-sm-6">
+                    <div className="menuButton1 col-lg-8 col-md-8 col-sm-8">
                         Index
                     </div>
-                    <div className="col-lg-4 col-md-4 col-sm-4">
+                    <div className="col-lg-2 col-md-2 col-sm-2">
                         2
                     </div>
                 </div>
-                <br />
 
                 <div className="menuButton row">
                     <div className="col-lg-2 col-md-2 col-sm-2"><i class="far fa-lightbulb"></i></div>
-                    <div className="menuButton1 col-lg-6 col-md-6 col-sm-6">
+                    <div className="menuButton1 col-lg-8 col-md-8 col-sm-8">
                         Idea
                     </div>
-                    <div className="col-lg-4 col-md-4 col-sm-4">
+                    <div className="col-lg-2 col-md-2 col-sm-2">
                         3
                     </div>
                 </div>
-                <br />
 
                 {this.showButton()}
-                <br />
 
                 {this.statusList()}
                 <br />
                 <div className="menuButton row">
                     <div className="col-lg-2 col-md-2 col-sm-2"><i class="fas fa-cog"></i></div>
-                    <div className="menuButton1 col-lg-6 col-md-6 col-sm-6">
+                    <div className="menuButton1 col-lg-8 col-md-8 col-sm-8">
                         Setting
                     </div>
-                    <div className="col-lg-4 col-md-4 col-sm-4">
+                    <div className="col-lg-2 col-md-2 col-sm-2">
                     </div>
                 </div>
                 <br />

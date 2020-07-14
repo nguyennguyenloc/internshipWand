@@ -9,8 +9,7 @@ class TodoItems extends Component {
         this.state = {
             todos: [
                 { title: '', status: true }
-            ],
-            editMode: false
+            ]
         }
     }
     deleteToDo = (todo) => {
@@ -42,41 +41,47 @@ class TodoItems extends Component {
             url = tickImg;
         }
         return (
-            <div>
+            <React.Fragment>
                 {/* <div className={classNames('section', 'todoItems', {
                     'todoItems-done': item.status
                 })}>
                 {/* {<img onClick={onClick} src={url} width={50} height={50} />} */}
                 {/* <h1>{this.props.item.title}</h1>  */}
-                {/* <div class="b"><div><i class="fas fa-trash-alt" aria-hidden="true"></i></div></div>
-                <div class="b"><div><i class="fas fa-edit" aria-hidden="true"></i></div></div> */}
-                <div className="b">
-                    {this.state.todos.map(x => {
-                        return (
-                            <div>
-                                <div className={classNames('todoItems', {
-                                    'todoItems-done': item.status
-                                })} >
-                                    <div className="row">
-
-                                        <div className="col-md-10">
-                                            {<img onClick={onClick} src={url} width={50} height={50} />}
-                                            {this.props.item.title}
-                                        </div>
-
-                                        <div className="col-md-1" onClick={() => { this.deleteToDo(x) }}>
-                                            <i class="fas fa-trash-alt" aria-hidden="true"></i>
-                                        </div>
-                                        <div className="col-md-1" onClick={() => { this.editToDo(x) }}>
-                                            <i class="fas fa-edit" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
+                {this.state.todos.map(x => {
+                    return (
+                        <div className={classNames('todoItems', {
+                            'todoItems-done': item.status
+                        })} >
+                            <div className=" row">
+                                <div className="col-md-10">
+                                    {<img onClick={onClick} src={url} width={40} height={40} />}
+                                    {this.props.item.title}
                                 </div>
-
+                                <div className="col-md-1" onClick={() => { this.deleteToDo(x) }}>
+                                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                                </div>
+                                <div className="col-md-1" onClick={() => { this.editToDo(x) }}>
+                                    <i class="fas fa-edit" aria-hidden="true"></i>
+                                </div>
+                                <hr />
                             </div>
-                        )
-                    })}
-                </div>
+                            {/* <ul className=" row">
+                                <li className="col-md-10">
+                                    {<img onClick={onClick} src={url} width={40} height={40} />}
+                                    {this.props.item.title}
+                                </li>
+                                <li className="col-md-1" onClick={() => { this.deleteToDo(x) }}>
+                                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                                </li>
+                                <li className="col-md-1" onClick={() => { this.editToDo(x) }}>
+                                    <i class="fas fa-edit" aria-hidden="true"></i>
+                                </li>
+                                <hr />
+                            </ul> */}
+                        </div>
+                    )
+                })
+                }
                 {/* <div className="b">
                     {this.state.todos.map(x => {
                         return (
@@ -87,9 +92,10 @@ class TodoItems extends Component {
                             </div>
                         )
                     })}
-            </div> */}
-            </div >
+                </div> */}
+            </React.Fragment >
         );
+
     }
 }
 export default TodoItems;
