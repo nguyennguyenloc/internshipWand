@@ -47,7 +47,8 @@ class ToDoList extends Component {
 
     addTodo = (todo) => {
         this.setState({
-            todos: [...this.state.todos, todo]
+            todos: [...this.state.todos, todo],
+            showAdd: false
         })
     }
     //đóng form
