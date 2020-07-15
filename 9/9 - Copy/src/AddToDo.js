@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import TodoItems from './Component/TodoItems';
+import ToDoList from './ToDoList';
 class AddToDo extends Component {
     state = {
         title: '',
@@ -16,7 +16,7 @@ class AddToDo extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.onAdd({
-            title: this.state.title,
+            title: this.state.title
         })
         this.setState({
             title: ''
@@ -30,6 +30,7 @@ class AddToDo extends Component {
     render() {
         return (
             <div className="addtodo">
+                {/* <ToDoList ok={this.handleSubmit}></ToDoList> */}
                 <h1>Add List</h1>
                 <br />
                 <form onSubmit={this.handleSubmit}>
@@ -38,11 +39,10 @@ class AddToDo extends Component {
                     </div>
                     <br />
                     <div>
-                        <button className="addtodo-button addtodo-add" type="submit">Add</button>
-                        <button className="addtodo-button addtodo-cancel" onClick={this.props.closeList}>Cancel</button>
+                        <button className="addtodo-button addtodo-add" onClick={this.props.openList} type="submit">Add</button>
+                        <button className="addtodo-button addtodo-cancel" onClick={this.props.closeAdd}>Cancel</button>
                     </div>
                 </form>
-                {/* <button className="addtodo-button" type="submit" onClick={this.close}>Notice</button> */}
             </div >
         )
     };

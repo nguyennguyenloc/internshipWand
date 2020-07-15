@@ -12,9 +12,10 @@ class ToDoList extends Component {
             { title: "Go to bed", status: true }
         ],
         showAdd: false,
-        editMode: false,
-        showList: true
+        showList: true,
+        showChoice: true
     }
+
     // source khi chuyển delete sang item
     // deleteToDo = (todo) => {
     //     const filtereditems = this.state.todos.filter(x => x.title !== todo.title);
@@ -50,13 +51,30 @@ class ToDoList extends Component {
         })
     }
     //đóng form
-    closeListt = () => {
+    closeAdd = () => {
         this.setState({
             showAdd: false,
-            showList: true
+            showList: true,
+            showChoice: true
+        })
+    }
+    //hiện List
+    openList = () => {
+        this.setState({
+            showAdd: true,
+            showList: true,
+            showChoice: true
         })
     }
     //Thêm
+    // open = () => {
+    //     this.setState({
+    //         showAdd: false,
+    //         showList: true,
+    //         showChoice: true
+    //     })
+    // }
+
 
     onItemClick(item) {
         // this.props.item = !this.props.item
@@ -76,19 +94,48 @@ class ToDoList extends Component {
             })
         }
     }
+    showClickAdd = () => {
+        this.setState({
+            showAdd: !this.state.showAdd,
+            showList: false,
+            showChoice: false
+        })
+    }
+    showClickButton = () => {
+        this.setState({
+            showList: !this.state.showList,
+            showChoice: true
+        })
+    }
+    showButton = () => {
+        return <div className="todolist-add">
+            <div className="todolist-add1">Life Cycle</div>
+            <div className="todolist-add1" onClick={() => this.showClickAdd()}><i class="fas fa-plus"></i></div>
+            <div className="todolist-add1" onClick={() => this.showClickButton()}><i class="fas fa-list-ul"></i></div>
+        </div >
+    }
+    show = () => {
+        if (this.state.showChoice === true) {
+            return this.showButton();
+        } else {
+            return '';
+        }
+    }
     render() {
         const { todos } = this.state;
         if (todos.length) {
             return (
                 <React.Fragment>
                     {/* ShowFormAdd */}
-                    {this.state.showAdd && <AddToDo onAdd={this.addTodo} closeList={this.closeListt}></AddToDo>}
-                    <div className="todolist-add">
+                    {this.state.showAdd && <AddToDo onAdd={this.addTodo} closeAdd={this.closeAdd} openList={this.openList} open={this.open}></AddToDo>}
+                    {/* <div className="todolist-add">
                         <div className="todolist-add1">Life Cycle</div>
                         <div className="todolist-add1" onClick={() => this.setState({ showAdd: !this.state.showAdd })}><i class="fas fa-plus"></i></div>
                         <div className="todolist-add1" onClick={() => this.setState({ showList: !this.state.showList })}><i class="fas fa-list-ul"></i></div>
-                    </div>
+                    </div> */}
+                    {/* {this.showButton()} */}
                     {/* ShowListAdd */}
+                    {this.show()}
                     <div className="itemmmm">
                         {
                             this.state.showList &&
@@ -101,7 +148,7 @@ class ToDoList extends Component {
                             )
                         }
                     </div>
-
+                    {/* <TodoItems entries={this.state.items} /> */}
                     {/* <br /> */}
                     {/* <table>
                         <tr className="">
