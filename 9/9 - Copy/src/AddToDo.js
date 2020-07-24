@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ToDoList from './ToDoList';
 class AddToDo extends Component {
     state = {
         title: '',
+        status: false,
         showAdd: false,
-        showList: false
+        showList: false,
     }
 
     handleTitleChange = (event) => {
@@ -16,15 +16,20 @@ class AddToDo extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.onAdd({
-            title: this.state.title
+            title: this.state.title,
+            status: false,
         })
         this.setState({
-            title: ''
+            title: '',
+            status: false
         })
     }
 
     // close = () => {
     //     alert("Cancel: quay lại màn hình, Add: add List")
+    // }
+    // componentDidMount() {
+    //     this.fetchApi();
     // }
 
     render() {

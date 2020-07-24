@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mt\\documents\\internshipWand\\testnetcore\\aspnetcoreapp\\aspnetcoreapp.csproj": {}
+    "C:\\Users\\MT\\Documents\\internshipWand\\TestNetCore\\aspnetcoreapp\\aspnetcoreapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mt\\documents\\internshipWand\\testnetcore\\aspnetcoreapp\\aspnetcoreapp.csproj": {
+    "C:\\Users\\MT\\Documents\\internshipWand\\TestNetCore\\aspnetcoreapp\\aspnetcoreapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mt\\documents\\internshipWand\\testnetcore\\aspnetcoreapp\\aspnetcoreapp.csproj",
+        "projectUniqueName": "C:\\Users\\MT\\Documents\\internshipWand\\TestNetCore\\aspnetcoreapp\\aspnetcoreapp.csproj",
         "projectName": "aspnetcoreapp",
-        "projectPath": "C:\\Users\\mt\\documents\\internshipWand\\testnetcore\\aspnetcoreapp\\aspnetcoreapp.csproj",
+        "projectPath": "C:\\Users\\MT\\Documents\\internshipWand\\TestNetCore\\aspnetcoreapp\\aspnetcoreapp.csproj",
         "packagesPath": "C:\\Users\\MT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mt\\documents\\internshipWand\\testnetcore\\aspnetcoreapp\\obj\\",
+        "outputPath": "C:\\Users\\MT\\Documents\\internshipWand\\TestNetCore\\aspnetcoreapp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MT\\AppData\\Roaming\\NuGet\\NuGet.Config"

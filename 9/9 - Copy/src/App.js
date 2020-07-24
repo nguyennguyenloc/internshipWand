@@ -21,6 +21,7 @@ class App extends Component {
       statusForm: !this.state.statusForm
     })
   }
+
   render() {
     return (
       <div className=" container section">

@@ -1,0 +1,13 @@
+C:\Users\MT\Documents\internshipWand\9\demo\bin\Debug\netcoreapp3.1\demo.exe
+C:\Users\MT\Documents\internshipWand\9\demo\bin\Debug\netcoreapp3.1\demo.deps.json
+C:\Users\MT\Documents\internshipWand\9\demo\bin\Debug\netcoreapp3.1\demo.runtimeconfig.json
+C:\Users\MT\Documents\internshipWand\9\demo\bin\Debug\netcoreapp3.1\demo.runtimeconfig.dev.json
+C:\Users\MT\Documents\internshipWand\9\demo\bin\Debug\netcoreapp3.1\demo.dll
+C:\Users\MT\Documents\internshipWand\9\demo\bin\Debug\netcoreapp3.1\demo.pdb
+C:\Users\MT\Documents\internshipWand\9\demo\obj\Debug\netcoreapp3.1\demo.csprojAssemblyReference.cache
+C:\Users\MT\Documents\internshipWand\9\demo\obj\Debug\netcoreapp3.1\demo.AssemblyInfoInputs.cache
+C:\Users\MT\Documents\internshipWand\9\demo\obj\Debug\netcoreapp3.1\demo.AssemblyInfo.cs
+C:\Users\MT\Documents\internshipWand\9\demo\obj\Debug\netcoreapp3.1\demo.csproj.CoreCompileInputs.cache
+C:\Users\MT\Documents\internshipWand\9\demo\obj\Debug\netcoreapp3.1\demo.dll
+C:\Users\MT\Documents\internshipWand\9\demo\obj\Debug\netcoreapp3.1\demo.pdb
+C:\Users\MT\Documents\internshipWand\9\demo\obj\Debug\netcoreapp3.1\demo.genruntimeconfig.cache

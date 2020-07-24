@@ -4,16 +4,20 @@ import TodoItems from './Component/TodoItems';
 
 class ToDoList extends Component {
     state = {
+        // todos: [
+        //     { title: "Go for a walk", status: false },
+        //     { title: "Drink", status: false },
+        //     { title: "Do something else", status: true },
+        //     { title: "Test raname task", status: false },
+        //     { title: "Go to bed", status: true }
+        // ],
         todos: [
-            { title: "Go for a walk", status: false },
-            { title: "Drink", status: false },
-            { title: "Do something else", status: true },
-            { title: "Test raname task", status: false },
-            { title: "Go to bed", status: true }
+            { title: '', status: false }
         ],
         showAdd: false,
         showList: true,
-        showChoice: true
+        showChoice: true,
+        tit: null
     }
 
     // source khi chuyển delete sang item
@@ -51,6 +55,7 @@ class ToDoList extends Component {
             showAdd: false
         })
     }
+
     //đóng form
     closeAdd = () => {
         this.setState({
@@ -122,6 +127,47 @@ class ToDoList extends Component {
             return '';
         }
     }
+    getList = () => {
+        fetch("http://localhost:4444/api/home")
+            .then(res => res.json())
+            .then(res => this.setState({ tit: res }))
+    }
+    getItem = (id) => {
+        fetch(`http://localhost:4444/api/home/${id}`)
+            .then(res => res.json())
+            .then(res => this.setState({ viewItem: res }))
+    }
+
+    onChangeContent = e => {
+        this.setState({
+            viewItem: { ...this.state.viewItem, title: e.target.value }
+        });
+    }
+
+    onDelete = () => {
+        var data = this.state.viewItem;
+        fetch(`http://localhost:4444/api/home/${data.id}`, {
+            method: 'DELETE', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }).then(res => res.json()).then(res => {
+            console.log(res)
+        })
+    }
+    onSubmitUpdate = () => {
+        var data = this.state.viewItem;
+        fetch(`http://localhost:4444/api/home/${data.id}`, {
+            method: 'PUT', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }).then(res => res.json()).then(res => {
+            console.log(res)
+        })
+    }
     render() {
         const { todos } = this.state;
         if (todos.length) {
@@ -138,7 +184,7 @@ class ToDoList extends Component {
                     {/* ShowListAdd */}
                     {this.show()}
                     <div className="itemmmm">
-                        {
+                        {/* {
                             this.state.showList &&
                             todos.length && todos.map((item, index) =>
                                 <TodoItems
@@ -147,8 +193,16 @@ class ToDoList extends Component {
                                     onClick={this.onItemClick(item)}
                                 />
                             )
-                        }
+                        } */}
+                        {todos.map((item, index) =>
+                            < TodoItems
+                                key={index}
+                                item={item}
+                                onClick={this.onItemClick(item)}
+                            />
+                        )}
                     </div>
+
                     {/* <TodoItems entries={this.state.items} /> */}
                     {/* <br /> */}
                     {/* <table>
@@ -188,6 +242,7 @@ class ToDoList extends Component {
                             </td>
                         </tr>
                     </table> */}
+
                 </React.Fragment >
             )
         }
