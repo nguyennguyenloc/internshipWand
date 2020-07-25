@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import './TodoItems.css';
 import circleImg from '../img/circle.svg';
 import tickImg from '../img/tick.svg';
+
 class TodoItems extends Component {
     constructor(props) {
         super(props);
@@ -66,6 +67,8 @@ class TodoItems extends Component {
     //         )
     //     return li;
     // }
+
+
     getList = () => {
         fetch("http://localhost:4444/api/home")
             .then(res => res.json())
@@ -82,7 +85,18 @@ class TodoItems extends Component {
             viewItem: { ...this.state.viewItem, title: e.target.value }
         });
     }
-
+    onAdd = () => {
+        var data = this.state.viewItem;
+        fetch(`http://localhost:4444/api/home`, {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }).then(res => res.json()).then(res => {
+            console.log(res)
+        })
+    }
     onDelete = () => {
         var data = this.state.viewItem;
         fetch(`http://localhost:4444/api/home/${data.id}`, {
@@ -115,11 +129,14 @@ class TodoItems extends Component {
         // )
 
         //  show Item not use function
+        console.log("todo item");
+        console.log(this.props.item);
         const { item, onClick } = this.props;
         let url = circleImg;
         if (item.status) {
             url = tickImg;
         }
+        // var totoItem = this.props.item;
         return (
             <React.Fragment>
                 {/* {
@@ -145,35 +162,30 @@ class TodoItems extends Component {
                         )
                     })
                 } */}
-                <button onClick={() => this.getList()}>aaa</button>
                 {
-                    this.state.tit && this.state.tit.map(item => {
-                        return (
-                            <div className={classNames('todoItems', {
-                                'todoItems-done': item.status
-                            })} >
-                                <div className=" row">
-                                    <div className="col-md-10">
-                                        {<img onClick={onClick} src={url} width={40} height={40} />}
-                                        {item.title}
-                                    </div>
-                                    <div className="col-md-1" onClick={() => this.getItem(item.id)}>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <hr />
-                                </div>
-                                <div>
-                                    {
-                                        this.state.viewItem && <React.Fragment>
-                                            <input defaultValue={this.state.viewItem.title} onChange={this.onChangeContent}></input>
-                                            <button onClick={() => this.onSubmitUpdate()}><i class="fas fa-edit" aria-hidden="true"></i></button>
-                                            <button onClick={() => this.onDelete()}><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                                        </React.Fragment>
-                                    }
-                                </div>
+                    <div className={classNames('todoItems', {
+                        'todoItems-done': item.status
+                    })} >
+                        <div className=" row">
+                            <div className="col-md-10">
+                                {<img onClick={onClick} src={url} width={40} height={40} />}
+                                {item.title}
                             </div>
-                        )
-                    })
+                            <div className="col-md-1" onClick={() => this.getItem(item.id)}>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <hr />
+                        </div>
+                        <div>
+                            {
+                                this.state.viewItem && <React.Fragment>
+                                    <input defaultValue={this.state.viewItem.title} onChange={this.onChangeContent}></input>
+                                    <button onClick={() => this.onSubmitUpdate()}><i class="fas fa-edit" aria-hidden="true"></i></button>
+                                    <button onClick={() => this.onDelete()}><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
+                                </React.Fragment>
+                            }
+                        </div>
+                    </div>
                 }
             </React.Fragment >
         );

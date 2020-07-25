@@ -5,19 +5,25 @@ import TodoItems from './Component/TodoItems';
 class ToDoList extends Component {
     state = {
         // todos: [
-        //     { title: "Go for a walk", status: false },
-        //     { title: "Drink", status: false },
-        //     { title: "Do something else", status: true },
-        //     { title: "Test raname task", status: false },
-        //     { title: "Go to bed", status: true }
-        // ],
+        //             { title: "Go for a walk", status: false },
+        //             { title: "Drink", status: false },
+        //             { title: "Do something else", status: true },
+        //             { title: "Test raname task", status: false },
+        //             { title: "Go to bed", status: true }
+        //         ],
         todos: [
-            { title: '', status: false }
+            { title: '', status: true }
         ],
         showAdd: false,
         showList: true,
         showChoice: true,
-        tit: null
+        tit: null,
+        data: null,
+        viewItem: null
+    }
+
+    componentDidMount() {
+        this.getList();
     }
 
     // source khi chuyển delete sang item
@@ -27,12 +33,13 @@ class ToDoList extends Component {
     //         todos: filtereditems
     //     })
     // }
+
     //1
     // editToDo = (x) => {
     //     this.setState({ editMode: true, editItem: x })
     // }
-    //2
 
+    //2
     // editToDo = (x) => {
     //     this.setState(state => ({
     //         todos: state.todos.map(todo => {
@@ -130,7 +137,9 @@ class ToDoList extends Component {
     getList = () => {
         fetch("http://localhost:4444/api/home")
             .then(res => res.json())
-            .then(res => this.setState({ tit: res }))
+            .then(res => {
+                this.setState({ todos: res, tit: res, showList: true });
+            })
     }
     getItem = (id) => {
         fetch(`http://localhost:4444/api/home/${id}`)
@@ -169,43 +178,42 @@ class ToDoList extends Component {
         })
     }
     render() {
+
         const { todos } = this.state;
-        if (todos.length) {
-            return (
-                <React.Fragment>
-                    {/* ShowFormAdd */}
-                    {this.state.showAdd && <AddToDo onAdd={this.addTodo} closeAdd={this.closeAdd} openList={this.openList} open={this.open}></AddToDo>}
-                    {/* <div className="todolist-add">
+        // console.log("test");
+        // console.log({ todos });
+        // console.log(this.state.showList);
+        return (
+            <React.Fragment>
+                {/* ShowFormAdd */}
+                {this.state.showAdd && <AddToDo onAdd={this.addTodo} closeAdd={this.closeAdd} openList={this.openList} open={this.open}></AddToDo>}
+                {/* <div className="todolist-add">
                         <div className="todolist-add1">Life Cycle</div>
                         <div className="todolist-add1" onClick={() => this.setState({ showAdd: !this.state.showAdd })}><i class="fas fa-plus"></i></div>
                         <div className="todolist-add1" onClick={() => this.setState({ showList: !this.state.showList })}><i class="fas fa-list-ul"></i></div>
                     </div> */}
-                    {/* {this.showButton()} */}
-                    {/* ShowListAdd */}
-                    {this.show()}
-                    <div className="itemmmm">
-                        {/* {
-                            this.state.showList &&
-                            todos.length && todos.map((item, index) =>
-                                <TodoItems
-                                    key={index}
-                                    item={item}
-                                    onClick={this.onItemClick(item)}
-                                />
-                            )
-                        } */}
-                        {todos.map((item, index) =>
-                            < TodoItems
+                {/* {this.showButton()} */}
+                {/* ShowListAdd */}
+                {this.show()}
+                <button onClick={() => this.getList()}>Update</button>
+                <div className="itemmmm">
+                    {
+                        this.state.showList &&
+                        todos.length && todos.map((item, index) => {
+                            return <TodoItems
                                 key={index}
                                 item={item}
                                 onClick={this.onItemClick(item)}
                             />
-                        )}
-                    </div>
+                        }
+                        )
+                    }
+                </div>
 
-                    {/* <TodoItems entries={this.state.items} /> */}
-                    {/* <br /> */}
-                    {/* <table>
+
+                {/* <TodoItems entries={this.state.items} /> */}
+                {/* <br /> */}
+                {/* <table>
                         <tr className="">
                             <td className="">
                                 <div className="a">
@@ -242,10 +250,8 @@ class ToDoList extends Component {
                             </td>
                         </tr>
                     </table> */}
-
-                </React.Fragment >
-            )
-        }
+            </React.Fragment >
+        )
 
         //source khi theem
         // return (
